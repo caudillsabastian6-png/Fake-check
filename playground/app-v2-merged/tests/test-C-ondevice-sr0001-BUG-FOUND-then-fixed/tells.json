@@ -1,0 +1,74 @@
+{
+  "user_image": "tests/test-C-ondevice-sr0001/cropped.png",
+  "reference_image": "../../sourced-reals/sr-0001-BS-1.png",
+  "user_size": [
+    536,
+    448
+  ],
+  "reference_size": [
+    600,
+    825
+  ],
+  "tells": {
+    "aspect_ratio": {
+      "user": 1.1964,
+      "reference": 0.7273,
+      "difference": 0.4691,
+      "threshold": 0.05,
+      "match": false,
+      "strong_mismatch": true
+    },
+    "mean_rgb": {
+      "user": [
+        106.9,
+        103.1,
+        117.3
+      ],
+      "reference": [
+        139.0,
+        126.3,
+        138.8
+      ],
+      "difference": 25.6,
+      "threshold": 30.0,
+      "match": true,
+      "strong_mismatch": false
+    },
+    "border_rgb": {
+      "user": [
+        157.8,
+        136.1,
+        169.4
+      ],
+      "reference": [
+        191.1,
+        163.4,
+        130.4
+      ],
+      "difference": 33.2,
+      "threshold": 40.0,
+      "match": true,
+      "strong_mismatch": false
+    },
+    "edge_density": {
+      "user": 0.0675,
+      "reference": 0.082,
+      "difference": 0.0145,
+      "threshold": 0.08,
+      "match": true,
+      "strong_mismatch": false
+    },
+    "colour_histogram": {
+      "user_correlation": 0.5396,
+      "reference": 1.0,
+      "difference": 0.4604,
+      "threshold": 0.15,
+      "match": false,
+      "strong_mismatch": true
+    }
+  },
+  "matches": 3,
+  "strong_mismatches": 2,
+  "verdict": "Likely Counterfeit",
+  "verdict_note": "Estimate only, never official, never guaranteed. A manifest name match alone never produces a Genuine verdict."
+}

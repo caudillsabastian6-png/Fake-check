@@ -1,0 +1,134 @@
+{
+  "app": "Real or Replica \u2014 merged V2 playground build",
+  "build": "app-v2-merged, Oct 27, 2026, playground only, NOT a release",
+  "verdict": "Likely Genuine",
+  "verdict_reason": "tells measured: matches=5 strong_mismatches=0",
+  "verdict_disclaimer": "Estimate only, never official, never guaranteed. A manifest name match alone never produces a Genuine verdict.",
+  "identity": "Alakazam|Base|1",
+  "reference": "../../sourced-reals/sr-0001-BS-1.png",
+  "reference_identity": "Alakazam|Base|1",
+  "user_file": "../agent-loop/run-v2-2026-10-26-night/cropped.png",
+  "crop_file": "../agent-loop/run-v2-2026-10-26-night/cropped.png",
+  "crop_mode": "supplied",
+  "crop_status": "supplied",
+  "sam_escalation_required": false,
+  "back_supplied": false,
+  "tells": {
+    "user_image": "../agent-loop/run-v2-2026-10-26-night/cropped.png",
+    "reference_image": "../../sourced-reals/sr-0001-BS-1.png",
+    "user_size": [
+      565,
+      797
+    ],
+    "reference_size": [
+      600,
+      825
+    ],
+    "tells": {
+      "aspect_ratio": {
+        "user": 0.7089,
+        "reference": 0.7273,
+        "difference": 0.0184,
+        "threshold": 0.05,
+        "match": true,
+        "strong_mismatch": false
+      },
+      "mean_rgb": {
+        "user": [
+          129.0,
+          118.4,
+          145.6
+        ],
+        "reference": [
+          139.0,
+          126.3,
+          138.8
+        ],
+        "difference": 8.2333,
+        "threshold": 30.0,
+        "match": true,
+        "strong_mismatch": false
+      },
+      "border_rgb": {
+        "user": [
+          166.8,
+          141.1,
+          169.1
+        ],
+        "reference": [
+          191.1,
+          163.4,
+          130.4
+        ],
+        "difference": 28.4333,
+        "threshold": 40.0,
+        "match": true,
+        "strong_mismatch": false
+      },
+      "edge_density": {
+        "user": 0.0875,
+        "reference": 0.082,
+        "difference": 0.0055,
+        "threshold": 0.08,
+        "match": true,
+        "strong_mismatch": false
+      },
+      "colour_histogram": {
+        "user_correlation": 0.9213,
+        "reference": 1.0,
+        "difference": 0.0787,
+        "threshold": 0.15,
+        "match": true,
+        "strong_mismatch": false
+      }
+    },
+    "matches": 5,
+    "strong_mismatches": 0,
+    "verdict": "Likely Genuine",
+    "verdict_note": "Estimate only, never official, never guaranteed. A manifest name match alone never produces a Genuine verdict."
+  },
+  "steps": [
+    {
+      "step": "Identity",
+      "detail": "user_identity=Alakazam|Base|1 reference_identity=Alakazam|Base|1 match=True"
+    },
+    {
+      "step": "Pip/crop",
+      "detail": "user file supplied as crop (test path); no re-crop, no invented box"
+    },
+    {
+      "step": "Gauge/tells",
+      "detail": "tells measured: matches=5 strong_mismatches=0"
+    },
+    {
+      "step": "Back",
+      "detail": "no back photo supplied \u2014 front-only verdict"
+    },
+    {
+      "step": "Latch/examiner",
+      "detail": "structural checks: {'identity_supplied': True, 'identity_matches_reference': True, 'crop_exists': True, 'box_valid': True, 'tells_measured': True, 'verdict_allowed': True, 'disclaimer_present': True, 'api_calls': 0, 'spend_usd': 0.0}"
+    }
+  ],
+  "latch_checks": {
+    "identity_supplied": true,
+    "identity_matches_reference": true,
+    "crop_exists": true,
+    "box_valid": true,
+    "tells_measured": true,
+    "verdict_allowed": true,
+    "disclaimer_present": true,
+    "api_calls": 0,
+    "spend_usd": 0.0
+  },
+  "api_calls": 0,
+  "spend_usd": 0.0,
+  "merged_from": [
+    "agent_loop_v2.py",
+    "tells_v2.py",
+    "crop_v2.py"
+  ],
+  "still_v1": [
+    "One-Go in the live app (v1)",
+    "Public Demo public link (old version, NOT updated in this job)"
+  ]
+}

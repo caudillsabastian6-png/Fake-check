@@ -1,0 +1,74 @@
+{
+  "user_image": "../agent-loop/run-v2-2026-10-26/cropped.png",
+  "reference_image": "../../sourced-reals/sr-0001-BS-1.png",
+  "user_size": [
+    565,
+    797
+  ],
+  "reference_size": [
+    600,
+    825
+  ],
+  "tells": {
+    "aspect_ratio": {
+      "user": 0.7089,
+      "reference": 0.7273,
+      "difference": 0.0184,
+      "threshold": 0.05,
+      "match": true,
+      "strong_mismatch": false
+    },
+    "mean_rgb": {
+      "user": [
+        129.0,
+        118.4,
+        145.6
+      ],
+      "reference": [
+        139.0,
+        126.3,
+        138.8
+      ],
+      "difference": 8.2333,
+      "threshold": 30.0,
+      "match": true,
+      "strong_mismatch": false
+    },
+    "border_rgb": {
+      "user": [
+        166.8,
+        141.1,
+        169.1
+      ],
+      "reference": [
+        191.1,
+        163.4,
+        130.4
+      ],
+      "difference": 28.4333,
+      "threshold": 40.0,
+      "match": true,
+      "strong_mismatch": false
+    },
+    "edge_density": {
+      "user": 0.0875,
+      "reference": 0.082,
+      "difference": 0.0055,
+      "threshold": 0.08,
+      "match": true,
+      "strong_mismatch": false
+    },
+    "colour_histogram": {
+      "user_correlation": 0.9213,
+      "reference": 1.0,
+      "difference": 0.0787,
+      "threshold": 0.15,
+      "match": true,
+      "strong_mismatch": false
+    }
+  },
+  "matches": 5,
+  "strong_mismatches": 0,
+  "verdict": "Likely Genuine",
+  "verdict_note": "Estimate only, never official, never guaranteed. A manifest name match alone never produces a Genuine verdict."
+}

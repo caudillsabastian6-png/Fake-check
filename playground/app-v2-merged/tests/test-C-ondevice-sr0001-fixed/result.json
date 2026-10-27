@@ -1,0 +1,69 @@
+{
+  "app": "Real or Replica \u2014 merged V2 playground build",
+  "build": "app-v2-merged, Oct 27, 2026, playground only, NOT a release",
+  "verdict": "Inconclusive",
+  "verdict_reason": "sam_escalation_required_crop_not_available",
+  "verdict_disclaimer": "Estimate only, never official, never guaranteed. A manifest name match alone never produces a Genuine verdict.",
+  "identity": "Alakazam|Base|1",
+  "reference": "../../sourced-reals/sr-0001-BS-1.png",
+  "reference_identity": "Alakazam|Base|1",
+  "user_file": "../../sourced-reals/sr-0001-BS-1.png",
+  "crop_file": "../../sourced-reals/sr-0001-BS-1.png",
+  "crop_mode": "ondevice",
+  "crop_status": "PASS",
+  "sam_escalation_required": true,
+  "back_supplied": false,
+  "tells": null,
+  "steps": [
+    {
+      "step": "Identity",
+      "detail": "user_identity=Alakazam|Base|1 reference_identity=Alakazam|Base|1 match=True"
+    },
+    {
+      "step": "Pip/ondevice-crop",
+      "detail": "ondevice branch=v0_fallback"
+    },
+    {
+      "step": "Pip/crop",
+      "detail": "REJECTED invalid on-device box [28, 27, 564, 475] aspect=1.196 \u2014 bad crop, not a fake card"
+    },
+    {
+      "step": "Pip/SAM-escalation",
+      "detail": "invalid on-device box \u2014 SAM escalation required, $0 build makes no SAM call"
+    },
+    {
+      "step": "Loop/decision",
+      "detail": "sam_escalation_required_crop_not_available"
+    },
+    {
+      "step": "Back",
+      "detail": "no back photo supplied \u2014 front-only verdict"
+    },
+    {
+      "step": "Latch/examiner",
+      "detail": "structural checks: {'identity_supplied': True, 'identity_matches_reference': True, 'crop_exists': True, 'box_valid': False, 'tells_measured': False, 'verdict_allowed': True, 'disclaimer_present': True, 'api_calls': 0, 'spend_usd': 0.0}"
+    }
+  ],
+  "latch_checks": {
+    "identity_supplied": true,
+    "identity_matches_reference": true,
+    "crop_exists": true,
+    "box_valid": false,
+    "tells_measured": false,
+    "verdict_allowed": true,
+    "disclaimer_present": true,
+    "api_calls": 0,
+    "spend_usd": 0.0
+  },
+  "api_calls": 0,
+  "spend_usd": 0.0,
+  "merged_from": [
+    "agent_loop_v2.py",
+    "tells_v2.py",
+    "crop_v2.py"
+  ],
+  "still_v1": [
+    "One-Go in the live app (v1)",
+    "Public Demo public link (old version, NOT updated in this job)"
+  ]
+}

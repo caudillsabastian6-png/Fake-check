@@ -1,0 +1,13 @@
+Debian 12 Bookworm XFCE — first-boot install list (BARLA, 4GB RAM, 32GB eMMC)
+System (apt): git, curl, wget, rsync, htop, python3, python3-pip, python3-pil,
+  openssh-server, firmware-linux-nonfree (AMD Stoneyridge firmware)
+Python: Pillow (via python3-pil, or pip Pillow in a venv)
+Services: tailscaled (via official installer), sshd (Tailscale SSH only),
+  cloudflared (install separately; token entered at first boot ONLY, not in pack)
+Scripts in this pack: first-boot.sh, tailscale-ssh-setup.sh, backup-to-seagate.sh
+Agent files in this pack: agent-loop/agent_loop_v2.py, tells-v2/tells_v2.py,
+  pool/pool-merged-2026-10-26.json, bridge-watch/bridge-watch-loop.sh,
+  bridge-watch/bridge-watch-v2.sh (see that file for v2 spec notes)
+NOT in this pack, by design: Tailscale auth, Cloudflare tunnel token,
+  Meta/Baseten API keys, SSH private keys, passwords. Enter those at first
+  boot, in the terminal, never in these files.
