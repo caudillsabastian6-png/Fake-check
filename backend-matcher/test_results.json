@@ -1,0 +1,186 @@
+{
+  "A_sanity_same_file": {
+    "full_ahash": 0,
+    "full_dhash": 0,
+    "full_phash": 0,
+    "centre_ahash": 0,
+    "centre_dhash": 0,
+    "centre_phash": 0
+  },
+  "B_robust_resize_reencode": {
+    "full_ahash": 0,
+    "full_dhash": 0,
+    "full_phash": 0,
+    "centre_ahash": 0,
+    "centre_dhash": 1,
+    "centre_phash": 0
+  },
+  "C_same_identity_pairs": [
+    {
+      "identity": "Yveltal 019/025",
+      "full_ahash": 2,
+      "full_dhash": 9,
+      "full_phash": 20,
+      "centre_ahash": 4,
+      "centre_dhash": 16,
+      "centre_phash": 16
+    },
+    {
+      "identity": "Switch 183/202",
+      "full_ahash": 4,
+      "full_dhash": 9,
+      "full_phash": 8,
+      "centre_ahash": 3,
+      "centre_dhash": 8,
+      "centre_phash": 10
+    },
+    {
+      "identity": "Hop 165/202",
+      "full_ahash": 4,
+      "full_dhash": 9,
+      "full_phash": 16,
+      "centre_ahash": 4,
+      "centre_dhash": 11,
+      "centre_phash": 16
+    }
+  ],
+  "D_impostor_stats": {
+    "full_ahash": {
+      "n": 60,
+      "min": 3,
+      "p25": 15,
+      "median": 24,
+      "p75": 30,
+      "max": 52,
+      "mean": 22.97
+    },
+    "full_dhash": {
+      "n": 60,
+      "min": 14,
+      "p25": 22,
+      "median": 26,
+      "p75": 33,
+      "max": 48,
+      "mean": 27.55
+    },
+    "full_phash": {
+      "n": 60,
+      "min": 14,
+      "p25": 22,
+      "median": 28,
+      "p75": 32,
+      "max": 44,
+      "mean": 27.23
+    },
+    "centre_ahash": {
+      "n": 60,
+      "min": 4,
+      "p25": 16,
+      "median": 29,
+      "p75": 37,
+      "max": 55,
+      "mean": 27.2
+    },
+    "centre_dhash": {
+      "n": 60,
+      "min": 15,
+      "p25": 26,
+      "median": 30,
+      "p75": 34,
+      "max": 41,
+      "mean": 29.68
+    },
+    "centre_phash": {
+      "n": 60,
+      "min": 18,
+      "p25": 26,
+      "median": 30,
+      "p75": 32,
+      "max": 40,
+      "mean": 29.2
+    }
+  },
+  "E_fake_vs_genuine_nearest_centre_phash": {
+    "n": 47,
+    "min": 16,
+    "p25": 20,
+    "median": 22,
+    "p75": 24,
+    "max": 26,
+    "mean": 21.96
+  },
+  "E_fake_vs_genuine_random_centre_phash": {
+    "n": 47,
+    "min": 24,
+    "p25": 28,
+    "median": 32,
+    "p75": 36,
+    "max": 42,
+    "mean": 32.55
+  },
+  "F_genuine_back_vs_back_stats": {
+    "full_ahash": {
+      "n": 20,
+      "min": 2,
+      "p25": 5,
+      "median": 8,
+      "p75": 12,
+      "max": 17,
+      "mean": 7.85
+    },
+    "full_dhash": {
+      "n": 20,
+      "min": 0,
+      "p25": 1,
+      "median": 4,
+      "p75": 7,
+      "max": 15,
+      "mean": 4.55
+    },
+    "full_phash": {
+      "n": 20,
+      "min": 0,
+      "p25": 4,
+      "median": 8,
+      "p75": 12,
+      "max": 20,
+      "mean": 7.8
+    },
+    "centre_ahash": {
+      "n": 20,
+      "min": 1,
+      "p25": 5,
+      "median": 8,
+      "p75": 11,
+      "max": 16,
+      "mean": 7.8
+    },
+    "centre_dhash": {
+      "n": 20,
+      "min": 1,
+      "p25": 4,
+      "median": 6,
+      "p75": 11,
+      "max": 17,
+      "mean": 6.75
+    },
+    "centre_phash": {
+      "n": 20,
+      "min": 2,
+      "p25": 4,
+      "median": 6,
+      "p75": 14,
+      "max": 22,
+      "mean": 8.0
+    }
+  },
+  "G_nearest_other_A1_centre_phash": {
+    "n": 73,
+    "min": 10,
+    "p25": 16,
+    "median": 18,
+    "p75": 20,
+    "max": 24,
+    "mean": 17.89
+  }
+}

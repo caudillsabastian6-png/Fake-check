@@ -1,0 +1,74 @@
+{
+  "label": "STEP 4a CALIBRATION REPORT \u2014 TEST ONLY, NOT A SHIPPED VERDICT, NOT AN ACCURACY CLAIM",
+  "date": "2026-10-28",
+  "cost_usd": 0,
+  "model_calls": 0,
+  "training": false,
+  "gpu": false,
+  "modal_deploy": false,
+  "cases": [
+    {
+      "case": "C1",
+      "kind": "same-card front tells",
+      "expected": "test-only Likely Genuine",
+      "actual": "test-only: Likely Genuine (tells rule, NOT shipped)"
+    },
+    {
+      "case": "C2",
+      "kind": "wrong-reference control",
+      "expected": "safe: Inconclusive (NOT a confident Counterfeit, card is not fake)",
+      "actual": "test-only: Inconclusive"
+    },
+    {
+      "case": "C3",
+      "kind": "fake front, identity unknown, vs non-own reference",
+      "expected": "mismatch signal only, NOT credited as fake detection",
+      "actual": "test-only: Likely Counterfeit (tells rule, NOT shipped)"
+    },
+    {
+      "case": "C4",
+      "kind": "exact-set ambiguity",
+      "expected": "needs_input",
+      "actual": "needs_input"
+    },
+    {
+      "case": "C5",
+      "kind": "image-only identity",
+      "expected": "needs_input (image matcher does not exist)",
+      "actual": "needs_input"
+    },
+    {
+      "case": "C6",
+      "kind": "front-only tells (missing back)",
+      "expected": "back not_measurable, never borrowed",
+      "actual": "not_measurable"
+    },
+    {
+      "case": "C7",
+      "kind": "out-of-pool set+number",
+      "expected": "needs_input",
+      "actual": "needs_input"
+    },
+    {
+      "case": "C8",
+      "kind": "exact set resolves",
+      "expected": "resolved base1-1",
+      "actual": "resolved base1-1"
+    }
+  ],
+  "safety_agreement": "7/7 safe outcomes (no confident wrong verdict)",
+  "false_likely_rate": "0 confident wrong verdicts in 8 cases (C2 Inconclusive is safe, C3 excluded from fake-detection credit)",
+  "inconclusive_rate": "1 of 3 tells cases was Inconclusive (wrong-reference control); same-card front was Genuine, fake-front-vs-non-own-reference was Counterfeit-as-mismatch-only",
+  "discrimination": "Tells did NOT distinguish a different Base Set card from Alakazam (wrong-reference control = Inconclusive, only histogram strong). Tells are not an identity matcher.",
+  "median_ready_identities": 0,
+  "paired_front_back_same_card_test_set": "NONE on file for a named identity in this run (backs-pool pairs are 'possible' triage, not verified same-physical-card pairs; tonight centre crops are backs without paired fronts here)",
+  "image_only_identity_matching": "NOT AVAILABLE \u2014 no $0 image-to-identity matcher on file; Step 2 is partial (set+number only)",
+  "gate_verdict": "FAIL \u2014 DO NOT ENABLE ANY REAL VERDICT. Advance Step 4b/c approval in principle does NOT override this gate: report must pass + Latch eyeball review + partial scope only. This report does not pass, so no verdict ships, regardless of advance approval.",
+  "conditions_a_likely_would_require": [
+    "At least one median-ready identity (3-5 distinct phone copies, same SHA = one copy) \u2014 currently 0, Chatot has 2 and needs 1 more",
+    "A verified paired front+back set for the same physical cards, genuine and fake, with ground truth recorded before the run",
+    "Tells discrimination proven on wrong-reference and near-identical controls, not just same-card matches",
+    "An image-to-identity matcher with a named, owner-approved threshold, or a set+number-only scope stated explicitly",
+    "Latch Final Examiner eyeball review of this report and of tester-facing wording"
+  ]
+}

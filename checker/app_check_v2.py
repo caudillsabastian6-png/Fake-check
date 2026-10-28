@@ -70,6 +70,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tells_v2  # noqa: E402  (copied verbatim Tells v2)
 import agents101_leftovers as leftovers  # noqa: E402  (Agents 101 ideas 5-9)
+import why_measured  # noqa: E402  (Q10 plain-words why explainer, Oct 28)
 
 ALLOWED = ("Likely Genuine", "Likely Counterfeit", "Inconclusive")
 DISCLAIMER = ("Estimate only, never official, never guaranteed. "
@@ -605,6 +606,21 @@ def main():
     }
     step("Latch/examiner", f"structural checks: {checks}")
 
+    # --- Q10 — plain-words why explainer: only tells actually measured ---
+    # Computed after the final verdict so the combined sentence matches
+    # the verdict that actually filed (including verification downgrades).
+    try:
+        why = why_measured.explain(tells_result, back_tells_result, verdict,
+                                   back_supplied=bool(a.back),
+                                   back_reference_supplied=bool(a.back_reference))
+    except Exception as e:
+        why = {"front": {"measured": [], "missing": [], "sentence": "Why explainer failed to build."},
+               "back": None, "back_sentence": f"why explainer failed: {type(e).__name__}",
+               "not_measured": list(why_measured.ALWAYS_NOT_MEASURED),
+               "combined_sentence": "Why explainer failed to build — see the tells table instead.",
+               "measured_total": 0}
+    step("Why/measured", f"measured_total={why['measured_total']} not_measured={len(why['not_measured'])}")
+
     result = {
         "app": "Real or Replica — merged V2 playground build",
         "build": "app-v2-merged, Oct 27, 2026, playground only, NOT a release",
@@ -631,6 +647,7 @@ def main():
         "back_reason": back_reason,
         "back_tells": back_tells_result,
         "tells": tells_result,
+        "why_measured": why,
         "scan_quality": quality,
         "scan_quality_passed": not quality_problems,
         "scan_quality_problems": quality_problems,
