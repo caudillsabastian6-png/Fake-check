@@ -1,0 +1,44 @@
+[
+  {
+    "test": "tests/test-A-alakazam-vs-alakazam/result.json",
+    "verdict": "Likely Genuine",
+    "reason": "tells measured: matches=5 strong_mismatches=0",
+    "api_calls": 0,
+    "spend_usd": 0.0
+  },
+  {
+    "test": "tests/test-B-alakazam-vs-charizard/result.json",
+    "verdict": "Inconclusive",
+    "reason": "identity_mismatch_reference_not_for_supplied_identity",
+    "api_calls": 0,
+    "spend_usd": 0.0
+  },
+  {
+    "test": "tests/test-C-ondevice-sr0001-BUG-FOUND-then-fixed/result.json",
+    "verdict": "Likely Counterfeit",
+    "reason": "tells measured: matches=3 strong_mismatches=2",
+    "api_calls": 0,
+    "spend_usd": 0.0
+  },
+  {
+    "test": "tests/test-C-ondevice-sr0001-fixed/result.json",
+    "verdict": "Inconclusive",
+    "reason": "sam_escalation_required_crop_not_available",
+    "api_calls": 0,
+    "spend_usd": 0.0
+  },
+  {
+    "test": "tests/test-D-missing-reference/result.json",
+    "verdict": "Inconclusive",
+    "reason": "reference_unreadable_offline",
+    "api_calls": 0,
+    "spend_usd": 0.0
+  },
+  {
+    "test": "tests/test-B-tells-only.json (tells_v2 direct, Alakazam crop vs Charizard ref)",
+    "verdict": "Inconclusive",
+    "reason": "matches=2 strong=1",
+    "api_calls": 0,
+    "spend_usd": 0.0
+  }
+]

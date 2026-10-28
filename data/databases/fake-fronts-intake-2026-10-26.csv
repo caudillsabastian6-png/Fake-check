@@ -1,0 +1,42 @@
+# Names below are provisional reads from chat-rendered photos, NOT full-resolution verified. Classification (all fakes, fronts only) is from fakes-fronts-batch-2026-10-26-2251.md.
+file,side,authenticity,photo_type,visible_cards,notes
+5280_324_7kcl.jpg,front,fake,single,Milcery,owner-declared fake batch A
+5281_325_rbay.jpg,front,fake,single,Absol,owner-declared fake batch A
+5282_326_k60u.jpg,front,fake,single,Honchkrow,owner-declared fake batch A
+5283_327_nc0o.jpg,front,fake,single,Suicune,owner-declared fake batch A
+5284_328_fas0.jpg,front,fake,single,Darmanitan,owner-declared fake batch A
+5285_329_1sj0.jpg,front,fake,single,Gastly,owner-declared fake batch A
+5286_330_hjzi.jpg,front,fake,single,Sableye,owner-declared fake batch A
+5288_331_ss51.jpg,front,fake,single,Murkrow,owner-declared fake batch A; file index 331 precedes 332 in upload order
+5287_332_suck.jpg,front,fake,single,Mimikyu,owner-declared fake batch A
+5289_333_z30g.jpg,front,fake,single,Seviper,owner-declared fake batch A
+5290_334_ig6r.jpg,front,fake,group-3,Krookodile; Toxel; Absol,split per card before counting; Absol repeats batch A identity (separate photo)
+5291_335_peo3.jpg,front,fake,group-4,Suicune; Prinplup; Seel; Cerulege,split per card before counting; Suicune repeats batch A identity (separate photo)
+5292_336_yc16.jpg,front,fake,single,Lombre,owner-declared fake batch B
+5293_337_cb0i.jpg,front,fake,single,Swinub,owner-declared fake batch B
+5294_338_xhqa.jpg,front,fake,single,Piplup,owner-declared fake batch B
+5295_339_2a3p.jpg,front,fake,single,UNCERTAIN - blurry white/blue card - do not guess,owner-declared fake batch B; re-read at full resolution before ID
+5296_340_sk1h.jpg,front,fake,group-4,Pawmi; Lotad; Lokix; Lotad,split per card; two Lotad appearances in one photo
+5297_341_akm0.jpg,front,fake,group-4,Cresselia; Nymble; Pawmot; Pawmi,split per card; Pawmi repeats within batch B
+5298_342_chhb.jpg,front,fake,group-3,Pawmo; Arboliva ex; Reshiram,split per card
+5299_343_8p54.jpg,front,fake,group-4,Vileplume; Oddish; Boltund; Sandile,split per card
+5300_344_zkmu.jpg,front,fake,group-3,Meloetta; Misdreavus; Yamper,split per card
+5301_345_n0i1.jpg,front,fake,group-3,Meloetta; Misdreavus; Boltund,split per card; Meloetta/Misdreavus repeat 5300 (same cards second photo); Boltund repeats 5299 identity
+5302_346_ot41.jpg,front,fake,single,Gastly,owner-declared fake batch C; Gastly repeats batch A identity (separate photo)
+5303_347_93wh.jpg,front,fake,single,Snubbull,owner-declared fake batch C
+5304_348_bfaf.jpg,front,fake,single,Sandile,owner-declared fake batch C; Sandile repeats 5299 identity (separate photo)
+5305_349_ltmx.jpg,front,fake,single,Snubbull,owner-declared fake batch C; likely same card as 5303 second photo - do not double-count distinct
+5306_350_yvrk.jpg,front,fake,single,Granbull,owner-declared fake batch C
+5307_351_plhn.jpg,front,fake,single,Ludicolo,owner-declared fake batch C
+5308_352_r380.jpg,front,fake,single,Mimikyu,owner-declared fake batch C; Mimikyu repeats batch A identity (separate photo)
+5309_353_cvpx.jpg,front,fake,single,Piloswine,owner-declared fake batch C
+5311_354_flmr.jpg,front,fake,single,Swinub,owner-declared fake batch D; Swinub repeats batch B identity (separate photo)
+5312_355_4y30.jpg,front,fake,single,UNCERTAIN - blurry orange card - do not guess,owner-declared fake batch D; re-read at full resolution before ID
+5310_356_wnjo.jpg,front,fake,single,Charcadet,owner-declared fake batch D
+5314_357_jmag.jpg,front,fake,single,Darumaka,owner-declared fake batch D; verify at full resolution before use
+5315_358_gceb.jpg,front,fake,single,Charmander,owner-declared fake batch D
+5316_359_6doj.jpg,front,fake,group-9,Milcery; Granbull; Alcremie; Dewgong; Mega Diancie ex; Cresselia; Darmanitan; Mismagius ex; Mega ex (uncertain),split per card; several identities repeat earlier batches
+5317_360_to6x.jpg,front,fake,single,Oddish,owner-declared fake batch D; rotated photo; Oddish repeats 5299 identity
+5318_361_u7fx.jpg,front,fake,single,Gloom,owner-declared fake batch D
+5319_362_z8wf.jpg,front,fake,single,UNCERTAIN - blurry blue card - do not guess,owner-declared fake batch D; re-read at full resolution before ID
+5320_363_0mfb.jpg,front,fake,group-4,Cerulege; Moltres; Darumaka; Charmeleon,split per card; Cerulege repeats 5291 identity
