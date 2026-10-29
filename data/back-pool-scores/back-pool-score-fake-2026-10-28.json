@@ -1,0 +1,35 @@
+{
+  "user_back": "/home/hatch/workspace/fake-check/playground/back-pool-crops-2026-10-28/web-05-disco-charizard-fake-back-cgc.png",
+  "crops_dir": "/home/hatch/workspace/fake-check/playground/back-pool-crops-2026-10-28",
+  "input_is_persisted_pool_crop": false,
+  "excluded_self_crop": 0,
+  "genuine_pool_scored": 174,
+  "median_diffs": {
+    "aspect_ratio": 0.1057,
+    "mean_rgb": 27.1,
+    "border_rgb": 17.8,
+    "edge_density": 0.0191,
+    "colour_histogram": 1.0733
+  },
+  "median_pair_matches": 3.0,
+  "median_pair_strong": 2.0,
+  "back_rule_matches_of_4": 3,
+  "back_rule_strong_of_4": 1,
+  "aspect_gate_hit": false,
+  "colour_histogram_informational": {
+    "median_diff": 1.0733,
+    "generic_threshold": 0.15,
+    "match_at_generic_threshold": false,
+    "strong_at_generic_threshold": true,
+    "excluded_from_back_counts": true,
+    "reason": "Oct 28 calibration: genuine match rate 55.1%, median diff 0.129, p90 0.311 \u2014 lighting/framing dominate this tell on backs; it must not drive a Counterfeit diagnostic. No new threshold set."
+  },
+  "generic_rule_for_comparison": {
+    "matches_of_5": 3,
+    "strong_of_5": 2,
+    "diagnostic_if_all_5_counted": "Likely Counterfeit"
+  },
+  "pool_diagnostic": "Inconclusive",
+  "diagnostic_note": "Back-design/print diagnostic only, NOT a verdict, NOT identity proof, NOT wired into the checker. Median across the genuine pool, not best-of. Calibration still open: exactly one unmatched fake back in the pool, so no fake boundary is claimed.",
+  "input_attestation": "Caller attests the input is a card-only crop. Raw hand/carpet photos must not be scored; an input that is not a persisted pool crop is flagged by input_is_persisted_pool_crop=false."
+}
