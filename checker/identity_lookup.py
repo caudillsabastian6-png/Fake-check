@@ -38,6 +38,7 @@ needs_input listing the sets, and the caller must ask for the exact
 set (set_id or exact set_name) — never pick the first row.
 """
 
+import gzip
 import json
 import os
 
@@ -64,6 +65,28 @@ def _load():
         ("ja", os.path.join(_DETAILS_DIR, "ja-details.json")),
     ):
         if not os.path.exists(path):
+            # Compressed fall-back (Oct 29, 2026): the plain en-details.json
+            # exceeds the GitHub push-files request limit (HTTP 413), so the
+            # repo also carries it compressed: en-details.json.gz, or that
+            # same gzip base64-encoded as text (en-details.json.gz.b64) for
+            # the UTF-8-only push route. Load either identically when the
+            # plain file is absent. The plain .json, when present, is
+            # always preferred and behaviour is unchanged.
+            gz_path = path + ".gz"
+            if os.path.exists(gz_path):
+                with gzip.open(gz_path, "rt", encoding="utf-8") as f:
+                    parsed = json.load(f)
+            elif os.path.exists(gz_path + ".b64"):
+                import base64
+                with open(gz_path + ".b64", encoding="utf-8") as f:
+                    parsed = json.loads(
+                        gzip.decompress(base64.b64decode(f.read())))
+            else:
+                continue
+            for row in parsed:
+                row = dict(row)
+                row["language"] = lang
+                rows.append(row)
             continue
         with open(path, encoding="utf-8") as f:
             for row in json.load(f):
