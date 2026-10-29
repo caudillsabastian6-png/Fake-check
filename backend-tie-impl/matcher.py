@@ -15,7 +15,8 @@ Honest limit, stated in code so it cannot be mistaken for image recognition:
 """
 import os, sys
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_SRC = os.path.expanduser("~/workspace/fake-check/playground/app-v2-merged")
+# Standalone fix (Oct 29, 2026): identity_lookup.py ships in this pack, in ../../checker.
+_SRC = os.path.normpath(os.path.join(_HERE, "..", "checker"))
 if _SRC not in sys.path:
     sys.path.insert(0, _SRC)
 import identity_lookup  # noqa: E402

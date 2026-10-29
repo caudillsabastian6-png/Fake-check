@@ -1,0 +1,18 @@
+# Real or Replica — Fake-check pack requirements (Oct 29, 2026)
+# Most of the pack is Python 3 stdlib only. Third-party needs:
+#
+# Checker / matcher / labelling / demo (checker/, backend-matcher/,
+# labelling/, demo/, tests/):
+Pillow>=9
+numpy>=1.24
+scipy>=1.10
+#
+# Backend-tie prototype ONLY (backend-tie-impl/) — a separate local
+# test server; nothing else in the pack needs these:
+#   fastapi>=0.100
+#   uvicorn>=0.23
+#   pydantic>=2
+# They are commented out so a plain `pip install -r requirements.txt`
+# gives a judge the $0 offline checker; uncomment (or install
+# backend-tie-impl/requirements.txt in its own venv) to run that
+# prototype's server tests.

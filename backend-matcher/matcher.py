@@ -41,7 +41,14 @@ import os
 import numpy as np
 from PIL import Image
 
+# Standalone fix (Oct 29, 2026): pool photos are card photos and are never
+# shipped in this pack. Look in backend-matcher/fixtures/ first, then any
+# dirs named in $FAKECHECK_POOL_DIRS (os.pathsep-separated), then the
+# builder's workspace dirs (absent on a clean machine -> resolve_path
+# returns None and the test SKIPs with the reason).
 BASE_DIRS = [
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures"),
+] + [d for d in os.environ.get("FAKECHECK_POOL_DIRS", "").split(os.pathsep) if d] + [
     os.path.expanduser("~/workspace/user/files"),
     os.path.expanduser("~/workspace/fake-check/fake-samples"),
 ]

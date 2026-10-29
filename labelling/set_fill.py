@@ -23,11 +23,27 @@ The source labelled_dataset.csv is NOT modified.
 import csv, os, re, sys, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FAKE = os.path.normpath(os.path.join(HERE, "..", ".."))
-SRC = os.path.join(FAKE, "playground", "labelled-cards-2026-10-28", "labelled_dataset.csv")
-EN = os.path.join(FAKE, "sourcing", "tcgdex-details", "en-details.csv")
-JA = os.path.join(FAKE, "sourcing", "tcgdex-details", "ja-details.csv")
-REPO = os.path.join(FAKE, "sourcing", "tcgdex-details", "repo")
+# Standalone fix (Oct 29, 2026): inputs resolve pack-relative first
+# (source dataset + EN/JA detail CSVs ship in this pack), with the
+# builder's workspace as fallback. The TCGdex repo clone (set totals)
+# is upstream and 224 MB — it does NOT ship; without it main() SKIPs.
+_PACK = os.path.normpath(os.path.join(HERE, ".."))
+FAKE = os.path.normpath(os.path.join(HERE, "..", ".."))  # builder-workspace fallback root (fake-check/)
+SRC = os.path.join(HERE, "labelled_dataset.csv")
+if not os.path.exists(SRC):
+    SRC = os.path.join(FAKE, "playground", "labelled-cards-2026-10-28", "labelled_dataset.csv")
+EN = os.path.join(_PACK, "data", "tcgdex-details", "en-details.csv")
+JA = os.path.join(_PACK, "data", "tcgdex-details", "ja-details.csv")
+if not os.path.exists(EN):
+    EN = os.path.join(FAKE, "sourcing", "tcgdex-details", "en-details.csv")
+    JA = os.path.join(FAKE, "sourcing", "tcgdex-details", "ja-details.csv")
+_REPO_CANDIDATES = [
+    os.environ.get("TCGDEX_REPO") or "",
+    os.path.join(HERE, "..", "..", "sourcing", "tcgdex-details", "repo"),
+    os.path.join(HERE, "..", "..", "..", "..", "sourcing", "tcgdex-details", "repo"),
+]
+REPO = next((c for c in _REPO_CANDIDATES if c and os.path.isdir(c)),
+            _REPO_CANDIDATES[1])
 OUT = os.path.join(HERE, "set_fill_results.csv")
 
 
@@ -79,6 +95,14 @@ def load_details():
 
 
 def main():
+    if not os.path.isdir(REPO):
+        print("SKIPPED: set totals come from the TCGdex repo clone "
+              "(cardCount.official in its .ts set files), which is upstream "
+              "and not shipped in this pack. The generated output ships "
+              "instead: set_fill_results.csv in this folder, verified by "
+              "test_set_fill.py. Set $TCGDEX_REPO to a local clone to "
+              "regenerate.")
+        return
     totals = load_set_totals()
     details = load_details()
     by_name_num = {}

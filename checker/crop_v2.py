@@ -19,7 +19,8 @@ import os, sys
 import numpy as np
 from PIL import Image
 from scipy import ndimage
-sys.path.insert(0, os.path.expanduser("~/workspace/fake-check/pip-ondevice-prototype"))
+# Standalone fix (Oct 29, 2026): on_device_crop.py is bundled in this folder.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from on_device_crop import _blur, detect as v0_detect, validate_box, PORTRAIT, LANDSCAPE  # noqa
 
 INSET = 0.10

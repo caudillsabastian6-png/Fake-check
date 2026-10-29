@@ -16,7 +16,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-V2 = os.path.expanduser("~/workspace/fake-check/playground/app-v2-merged")
+# Standalone fix (Oct 29, 2026): the checker ships in this pack, in ../checker.
+V2 = os.path.normpath(os.path.join(HERE, "..", "checker"))
 sys.path.insert(0, V2)
 import identity_lookup  # noqa: E402  ($0, local EN/JA detail index only)
 import reference_registry  # noqa: E402  ($0, on-demand verified batch only)
@@ -78,18 +79,22 @@ def _lookup_payload(set_q, number, name, language):
             "disclaimer": "Lookup is identity only, never authentication. "
                           "A lookup hit without a reference image stays Inconclusive.",
             "api_calls": 0, "spend_usd": 0.0}
+# Standalone fix (Oct 29, 2026): canned reference photos are card photos
+# and are never shipped in this pack. Drop local copies into demo/fixtures/
+# with these names to enable the canned endpoints; absent files degrade
+# honestly (the handlers below already check os.path.exists).
 REFS = {
-    "Alakazam|Base|1": os.path.expanduser("~/workspace/fake-check/sourced-reals/sr-0001-BS-1.png"),
-    "Charizard|Base|4": os.path.expanduser("~/workspace/fake-check/sourced-reals/sr-0004-BS-4.png"),
+    "Alakazam|Base|1": os.path.join(HERE, "fixtures", "sr-0001-BS-1.png"),
+    "Charizard|Base|4": os.path.join(HERE, "fixtures", "sr-0004-BS-4.png"),
 }
 # Pilot back reference ONLY: one genuine English back crop. Backs are
 # mostly uniform, so this scores back design/print, NOT identity.
 # It is NOT Alakazam/Charizard-specific, and NOT a back pool yet.
-BACK_REF = os.path.expanduser("~/workspace/fake-check/shelf-staging/web-05-disco-charizard-back-REAL.jpg")
+BACK_REF = os.path.join(HERE, "fixtures", "web-05-disco-charizard-back-REAL.jpg")  # fixtures/ — see REFS note
 CANNED = {
-    "test-a": (os.path.expanduser("~/workspace/fake-check/playground/agent-loop/run-v2-2026-10-26-night/cropped.png"),
+    "test-a": (os.path.join(HERE, "fixtures", "cropped.png"),
                "Alakazam|Base|1", "Alakazam|Base|1"),
-    "test-b": (os.path.expanduser("~/workspace/fake-check/playground/agent-loop/run-v2-2026-10-26-night/cropped.png"),
+    "test-b": (os.path.join(HERE, "fixtures", "cropped.png"),
                "Alakazam|Base|1", "Charizard|Base|4"),
 }
 

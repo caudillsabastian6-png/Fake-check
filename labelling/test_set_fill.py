@@ -3,8 +3,11 @@ import csv, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 res = list(csv.DictReader(open(os.path.join(HERE, "set_fill_results.csv"), encoding="utf-8")))
-src = list(csv.DictReader(open(os.path.normpath(os.path.join(
-    HERE, "..", "labelled-cards-2026-10-28", "labelled_dataset.csv")), encoding="utf-8")))
+# Standalone fix (Oct 29, 2026): the pre-fill source dataset ships in
+# this folder (labelled_dataset.csv — the Oct 28 dataset set_fill.py ran
+# on; labelled_dataset_v3.csv in this pack is its post-fill state).
+src = list(csv.DictReader(open(os.path.join(
+    HERE, "labelled_dataset.csv"), encoding="utf-8")))
 
 checks = []
 def check(name, ok):

@@ -6,7 +6,8 @@ No shipped verdict: test_outcome is labelled test evidence only and
 shipped_verdict is always None in this impl.
 """
 import importlib.util, os, sys
-_SRC = os.path.expanduser("~/workspace/fake-check/playground/app-v2-merged/tells_v2.py")
+# Standalone fix (Oct 29, 2026): tells_v2.py ships in this pack, in ../../checker.
+_SRC = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "checker", "tells_v2.py"))
 _spec = importlib.util.spec_from_file_location("tells_v2_impl", _SRC)
 _mod = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_mod)
 THRESHOLDS = dict(_mod.THRESHOLDS)

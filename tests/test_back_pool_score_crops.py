@@ -21,6 +21,9 @@ import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Standalone fix (Oct 29, 2026): the modules under test live in ../checker.
+sys.path.insert(0, os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "checker")))
 
 import back_pool_score_crops as bpc  # noqa: E402
 

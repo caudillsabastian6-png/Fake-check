@@ -35,10 +35,11 @@ from matcher import (  # noqa: E402
 from PIL import Image  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-POOL = os.path.expanduser(
-    "~/workspace/fake-check/playground/verification-pool-2026-10-28"
-    "/verification_pool_v2.csv"
-)
+# Standalone fix (Oct 29, 2026): default to the pack's own copy of the
+# pool CSV; $FAKECHECK_POOL_CSV can point at the playground original.
+POOL = os.environ.get("FAKECHECK_POOL_CSV") or os.path.normpath(
+    os.path.join(HERE, "..", "data", "verification-pool-v2",
+                 "verification_pool_v2.csv"))
 TMP = os.path.join(HERE, "tmp")
 os.makedirs(TMP, exist_ok=True)
 
@@ -87,6 +88,17 @@ def main():
 
     print("A1 fronts hashed:", len(a1_fronts), "| A1 backs:", len(a1_backs),
           "| fake fronts:", len(fake_fronts))
+
+    # Standalone fix (Oct 29, 2026): pool photos are card photos and are
+    # never shipped in this pack. If nothing resolves, SKIP with the
+    # reason instead of crashing on an empty list; the precomputed run
+    # (test_results.json + TEST_REPORT.md in this folder) is the evidence.
+    if not a1_fronts and not fake_fronts:
+        print("SKIPPED: no pool photo files resolved — card photos are not "
+              "shipped in the pack. Point $FAKECHECK_POOL_DIRS at a local "
+              "pool photo folder to run the full test. Precomputed "
+              "evidence: test_results.json / TEST_REPORT.md.")
+        return
 
     hashes_front = {r["front_file"]: hash_image(p) for r, p in a1_fronts}
     hashes_back = {r["back_file"]: hash_image(p) for r, p in a1_backs}

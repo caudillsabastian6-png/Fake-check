@@ -14,6 +14,9 @@ import sys
 import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Standalone fix (Oct 29, 2026): the modules under test live in ../checker.
+sys.path.insert(0, os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "checker")))
 
 from PIL import Image  # noqa: E402
 

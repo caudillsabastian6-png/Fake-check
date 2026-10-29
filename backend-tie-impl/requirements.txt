@@ -1,0 +1,8 @@
+# Backend-tie prototype only (Oct 28, 2026) — local test server deps.
+# Use in its own venv, e.g.:
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+#   .venv/bin/uvicorn app:app --host 127.0.0.1 --port 8765
+fastapi>=0.100
+uvicorn>=0.23
+pydantic>=2
+Pillow>=9

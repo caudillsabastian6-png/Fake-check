@@ -7,6 +7,8 @@ Exits non-zero on any failure.
 import json, os, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+# Standalone fix (Oct 29, 2026): why_measured lives in ../checker.
+sys.path.insert(0, os.path.normpath(os.path.join(HERE, "..", "checker")))
 import why_measured
 
 fails = []

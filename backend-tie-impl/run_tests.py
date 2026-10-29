@@ -15,7 +15,23 @@ fails = []
 def check(name, cond, detail=""):
     print(("PASS" if cond else "FAIL"), name, detail)
     if not cond: fails.append(name)
-proc = subprocess.Popen(["/tmp/backend-tie-venv/bin/uvicorn", "app:app", "--host", "127.0.0.1", "--port", "8765"],
+# Standalone fix (Oct 29, 2026): no absolute venv path. Use
+# $BACKEND_TIE_UVICORN, else a uvicorn on PATH, else `python -m uvicorn`.
+# If none is available, SKIP with the reason instead of failing.
+import shutil
+_uv = os.environ.get("BACKEND_TIE_UVICORN") or shutil.which("uvicorn")
+if _uv:
+    _UVICORN_CMD = [_uv]
+else:
+    try:
+        import uvicorn  # noqa: F401
+        _UVICORN_CMD = [sys.executable, "-m", "uvicorn"]
+    except ImportError:
+        print("SKIPPED: uvicorn/fastapi not installed on this machine — "
+              "install the backend-tie deps first (pip install -r requirements.txt "
+              "in this folder), then re-run. No server was started.")
+        sys.exit(0)
+proc = subprocess.Popen(_UVICORN_CMD + ["app:app", "--host", "127.0.0.1", "--port", "8765"],
                         cwd=HERE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 try:
     for _ in range(30):

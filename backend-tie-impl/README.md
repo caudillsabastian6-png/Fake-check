@@ -2,10 +2,15 @@
 
 Playground only. Localhost only. No Modal deploy, no live push, no spend, no training.
 
-Run (from this folder):
+Run (from this folder) — standalone fix, Oct 29, 2026 (no absolute
+venv path anymore):
 ```
-/tmp/backend-tie-venv/bin/uvicorn app:app --host 127.0.0.1 --port 8765
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/uvicorn app:app --host 127.0.0.1 --port 8765
 ```
+Or, with the deps installed any other way: `python3 run_tests.py`
+finds uvicorn itself ($BACKEND_TIE_UVICORN, PATH, or `python -m
+uvicorn`) and SKIPs with the reason when none is available.
 Then open `demo-test-upload.html` in Chrome on the same machine.
 Stop the server when testing ends, then run `python3 delete_test_uploads.py`.
 
