@@ -24,8 +24,8 @@ A card check runs four independent signals, and no single signal can
 produce a verdict on its own:
 
 1. **Identity first.** The card's printed set + number is matched against
-   a 37,369-identity reference catalogue (EN 23,771 / 223 sets, JA 13,598
-   / 346 sets, built from TCGdex data — `data/tcgdex-details/`). A
+   a 33,391-identity reference catalogue (EN 20,610 / 176 sets, JA 12,781
+   / 116 sets, built from TCGdex data — `data/tcgdex-details/`). A
    reference for the *wrong* identity yields Inconclusive, never Genuine.
 2. **Pixel tells, front and back separately.** Five measurements (aspect,
    colour, border, edge, histogram) are taken the same way on the user's
@@ -49,7 +49,7 @@ produce a verdict on its own:
 flowchart LR
     A[Photo front + back] --> B[Crop / scan-quality gate]
     B -->|bad crop or unreadable| X[needs_input: name the missing evidence]
-    B --> C[Identity gate: set + printed number vs 37,369 catalogue]
+    B --> C[Identity gate: set + printed number vs 33,391 catalogue]
     C -->|wrong or unknown identity| X
     C --> D[Tells: front vs verified reference]
     D --> E[Tells: back vs back pool]
@@ -74,7 +74,7 @@ this event.
 | | What |
 |---|---|
 | **Pre-existing (NOT claimed)** | The idea itself; Card Cauldron TCG (the builder's real card shop); the website; the first demo (Oct 24–25, 2026); the card photos and scans used as ground truth (shot before the event — the event work is the labelling, verification, and systems built *around* them). |
-| **Built Oct 26–27** | Checker core: agent loop v2, tells v2, crop v2, identity wiring to the 37,369 catalogue, back pool (175), Agents 101 verification gate / needs_input / timeline. |
+| **Built Oct 26–27** | Checker core: agent loop v2, tells v2, crop v2, identity wiring to the 33,391 catalogue, back pool (175), Agents 101 verification gate / needs_input / timeline. |
 | **Built Oct 28** | Image-to-identity matcher prototype, backend-tie test implementation, calibration run 1 (**gate FAIL** — reported, not hidden), verification pool v2 (229 owner-confirmed rows), live home-server backend (leaderboards, pool opt-in with photo storage, feedback), labelling guide. |
 | **Built Oct 29** | Set-symbol guide (404 sets), overnight scan labelling (847 labelled / 91 honestly held of 938), 1,555-row master library, async SAM → Spark pipeline prototype, rules-memory recall eval, cross-route agreement study ("digital copies"). |
 | **Oct 30 – Nov 4** | Calibration re-run on confirmed cards, final freeze, submission assembly. (This README is a living document until the Nov 4 freeze.) |
@@ -87,7 +87,7 @@ this event.
 | `demo/` | The V2 local demo UI + server from Oct 27 (the live demo at cardcauldrontcg.com/demo is a separate, larger build). |
 | `backend-matcher/` | Image-to-identity matcher prototype (aHash/dHash/pHash, two-gate rule) + its test results and the *unapproved* threshold proposal. |
 | `backend-tie-impl/` | Backend-tie Steps 1–3 test implementation + Step 4a calibration report (gate FAIL). Localhost test code, never deployed as a verdict service. |
-| `data/` | TCGdex detail index (37,369), backs/fronts indexes, verification pool v2 (229 rows, filenames only — no card photos), back-pool scores, set-symbol guide (404 sets). |
+| `data/` | TCGdex detail index (33,391), backs/fronts indexes, verification pool v2 (229 rows, filenames only — no card photos), back-pool scores, set-symbol guide (404 sets). |
 | `labelling/` | Set-fill code + its test, the progress ledger, and labelled dataset v3 (filenames only). |
 | `docs/` | Dated reports: tells calibration, Agents 101 build order, demo checklist, backend-tie plan, GitHub sweep, labelling guide, agent-loop run reports. |
 | `tests/` | Canned checker test results (JSON) + the unit tests described below. |
@@ -162,9 +162,9 @@ actually running the code from a clean copy of this repo on Oct 29, 2026:
    api.tcgdex.net** — its outputs are committed, so you don't need to.
 
 The fix list is short and mechanical (bundle the missing modules, fix
-three `sys.path`s, repoint two tests, add fixtures + a requirements
-file). It is scheduled before the Nov 4 freeze; until it lands, this
-section stays.
+three `sys.path`s, repoint two tests, add fixtures — a root
+`requirements.txt` has since been added). It is scheduled before the
+Nov 4 freeze; until it lands, this section stays.
 
 ## Evidence
 
