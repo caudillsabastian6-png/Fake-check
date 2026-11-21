@@ -32,52 +32,143 @@ def _order(pts):
     return np.array([pts[np.argmin(s)], pts[np.argmin(d)], pts[np.argmax(s)], pts[np.argmax(d)]], np.float32)
 
 
-def find_card(img):
-    """Return (quad or None, info). Looks for the largest 4-sided contour.
-    If the card fills the frame (scan / tight crop), returns the full frame."""
+CARD_AR = CARD_H_MM / CARD_W_MM  # 1.397
+
+
+def _rect_quad(rect):
+    box = _order(cv2.boxPoints(rect))
+    if np.linalg.norm(box[1] - box[0]) > np.linalg.norm(box[3] - box[0]):  # keep portrait
+        box = np.roll(box, -1, axis=0)
+    return box.astype(np.float32)
+
+
+def _card_like(rect, frame_area, cnt_area=None, ar_tol=0.12):
+    (rw, rh) = rect[1]
+    if min(rw, rh) < 1:
+        return False
+    ar = max(rw, rh) / min(rw, rh)
+    fill = rw * rh / frame_area
+    sol = (cnt_area / (rw * rh)) if cnt_area is not None else 1.0
+    return abs(ar - CARD_AR) <= ar_tol * CARD_AR and 0.02 <= fill <= 0.97 and sol >= 0.80
+
+
+def _bg_model_candidates(img, max_side=640):
+    """Busy backgrounds (carpet, wood, cloth) defeat edge contours: the texture makes
+    hundreds of edges. Instead model the BACKGROUND from the outer ring of the frame
+    (k-means colours in Lab after a blur that melts carpet loops), mark everything far
+    from it as foreground, and keep card-shaped blobs. Returns [(quad, area_frac)] in
+    full-res coordinates, largest first."""
     h, w = img.shape[:2]
+    s = max_side / max(h, w)
+    sm = cv2.resize(img, (int(w * s), int(h * s)), interpolation=cv2.INTER_AREA) if s < 1 else img.copy()
+    s = sm.shape[1] / w
+    lab = cv2.cvtColor(cv2.medianBlur(cv2.GaussianBlur(sm, (0, 0), 2.5), 7), cv2.COLOR_BGR2LAB).astype(np.float32)
+    H, W = lab.shape[:2]
+    m = max(3, int(min(H, W) * 0.04))
+    ring = np.zeros((H, W), bool); ring[:m] = ring[-m:] = True; ring[:, :m] = ring[:, -m:] = True
+    px = lab[ring].reshape(-1, 3)
+    K = 4
+    _, _, C = cv2.kmeans(px, K, None, (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 20, 0.5), 3, cv2.KMEANS_PP_CENTERS)
+    d = np.min(np.linalg.norm(lab.reshape(-1, 1, 3) - C.reshape(1, K, 3), axis=2), axis=1).reshape(H, W)
+    thr = max(12.0, float(np.percentile(d[ring], 97)) * 1.25)
+    fg = (d > thr).astype(np.uint8) * 255
+    fg = cv2.morphologyEx(fg, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    fg = cv2.morphologyEx(fg, cv2.MORPH_CLOSE, np.ones((15, 15), np.uint8))
+    cnts, _ = cv2.findContours(fg, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    filled = np.zeros_like(fg); cv2.drawContours(filled, cnts, -1, 255, -1)  # fill holes (dark art inside card)
+    cnts, _ = cv2.findContours(filled, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    out = []
+    for c in cnts:
+        a = cv2.contourArea(c)
+        if a < 0.02 * H * W:
+            continue
+        hull = cv2.convexHull(c)  # edge bites (holo/sleeve glare matching the floor) are bridged
+        rect = cv2.minAreaRect(hull)
+        if _card_like(rect, H * W, cv2.contourArea(hull), ar_tol=0.14):
+            q = _rect_quad(rect)
+            per = cv2.arcLength(hull, True)
+            for eps in (0.01, 0.02, 0.03, 0.04):  # perspective quad when the hull has 4 clear corners
+                ap = cv2.approxPolyDP(hull, eps * per, True)
+                if len(ap) == 4:
+                    q4 = _order(ap)
+                    if cv2.contourArea(q4) > 0.9 * rect[1][0] * rect[1][1]:
+                        q = q4
+                    break
+            out.append(((q / s).astype(np.float32), rect[1][0] * rect[1][1] / (H * W)))
+    return sorted(out, key=lambda t: -t[1])
+
+
+def _navy_outside(img, quad):
+    """Back-side guard: True when the band just OUTSIDE the quad is still the navy
+    back frame, i.e. the finder locked onto the inner swirl, not the card edge."""
+    h, w = img.shape[:2]
+    c = quad.mean(0)
+    outer = (c + (quad - c) * 1.06).astype(np.int32)
+    mask = np.zeros((h, w), np.uint8)
+    cv2.fillConvexPoly(mask, outer, 255); cv2.fillConvexPoly(mask, quad.astype(np.int32), 0)
+    if mask.sum() == 0:
+        return False
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    sel = mask > 0
+    H, S, V = hsv[..., 0][sel], hsv[..., 1][sel], hsv[..., 2][sel]
+    navy = ((H >= 100) & (H <= 130) & (S >= 70) & (V >= 25)).mean()
+    return navy > 0.5
+
+
+def find_card(img, side=None):
+    """Return (quad, info). Order: (1) a clean 4-sided edge contour with card shape;
+    (2) background-model segmentation (busy backgrounds); (3) full frame (scan or
+    tight crop). On backs, a quad whose outside band is still navy frame is rejected
+    (inner-swirl lock) and the next candidate / full frame is used."""
+    h, w = img.shape[:2]
+    A = float(w * h)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
-    edges = cv2.Canny(blur, 30, 100)
-    edges = cv2.dilate(edges, np.ones((5, 5), np.uint8), 1)
+    edges = cv2.dilate(cv2.Canny(blur, 30, 100), np.ones((5, 5), np.uint8), 1)
     cnts, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    best = None
+    cands = []
     for c in sorted(cnts, key=cv2.contourArea, reverse=True)[:5]:
         area = cv2.contourArea(c)
-        if area < 0.25 * w * h:
+        if area < 0.08 * A:
             break
-        peri = cv2.arcLength(c, True)
-        ap = cv2.approxPolyDP(c, 0.02 * peri, True)
+        ap = cv2.approxPolyDP(c, 0.02 * cv2.arcLength(c, True), True)
         if len(ap) == 4:
-            best = ap
-            break
-    if best is not None and cv2.contourArea(_order(best)) / float(w * h) > 0.92:
-        best = None  # "card" = whole frame: could be a scan, or a carpet edge field; check smooth region first
-    if best is None:
-        # textured backgrounds (carpet, wood) defeat edge contours: segment the card as the
-        # large smooth region instead (low local variance), then take its rotated box.
-        lv = cv2.blur((blur.astype(np.float32) - cv2.blur(blur.astype(np.float32), (9, 9))) ** 2, (15, 15))
-        smooth = (lv < np.percentile(lv, 45)).astype(np.uint8) * 255
-        smooth = cv2.morphologyEx(smooth, cv2.MORPH_CLOSE, np.ones((25, 25), np.uint8))
-        c2, _ = cv2.findContours(smooth, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        if c2:
-            c = max(c2, key=cv2.contourArea)
-            rect = cv2.minAreaRect(c); (rw, rh) = rect[1]
-            ar = max(rw, rh) / (min(rw, rh) + 1e-6)
-            if 0.1 * w * h < rw * rh < 0.9 * w * h and 1.2 < ar < 1.6:
-                box = _order(cv2.boxPoints(rect))
-                if np.linalg.norm(box[1] - box[0]) > np.linalg.norm(box[3] - box[0]):  # keep portrait
-                    box = np.roll(box, -1, axis=0)
-                return box, {"crop": "smooth_region", "card_fill": round(rw * rh / (w * h), 3)}
-    if best is None:
-        quad = np.array([[0, 0], [w - 1, 0], [w - 1, h - 1], [0, h - 1]], np.float32)
-        return quad, {"crop": "full_frame", "card_fill": 1.0}
-    quad = _order(best)
-    fill = cv2.contourArea(quad) / float(w * h)
-    if fill > 0.92:
-        quad = np.array([[0, 0], [w - 1, 0], [w - 1, h - 1], [0, h - 1]], np.float32)
-        return quad, {"crop": "full_frame", "card_fill": round(fill, 3)}
-    return quad, {"crop": "contour", "card_fill": round(fill, 3)}
+            q = _order(ap)
+            rect = cv2.minAreaRect(ap)
+            if _card_like(rect, A, cv2.contourArea(q)):
+                cands.append((q, "contour"))
+    frame_card_shaped = bool(abs(max(h, w) / min(h, w) - CARD_AR) < 0.12 * CARD_AR)
+    for q, f in _bg_model_candidates(img)[:1]:
+        # single-card photo guards (tight crops otherwise yield the text box or art box):
+        # the card must take >= 15% of the frame and lie the same way round as the frame.
+        long_axis = q[3] - q[0]  # quads are ordered so this is the card's long side
+        long_is_vertical = abs(long_axis[1]) >= abs(long_axis[0])
+        if f < 0.15 or (long_is_vertical != (h >= w)):
+            continue
+        # a card-shaped frame that the "card" already fills >= 70% of is a scan or tight
+        # crop: the outer ring is card border, not floor, so the model would cut into it.
+        if not (frame_card_shaped and f >= 0.70):
+            cands.append((q, "bg_model"))
+    rejected = []
+    for q, how in cands:
+        if side == "back" and _navy_outside(img, q):
+            rejected.append(how + ":inner_frame_lock"); continue
+        info = {"crop": how, "card_fill": round(float(cv2.contourArea(q)) / A, 3)}
+        if rejected:
+            info["rejected"] = rejected
+        return q, info
+    quad = np.array([[0, 0], [w - 1, 0], [w - 1, h - 1], [0, h - 1]], np.float32)
+    info = {"crop": "full_frame", "card_fill": 1.0, "frame_card_shaped": frame_card_shaped}
+    if rejected:
+        info["rejected"] = rejected
+    return quad, info
+
+
+def find_cards(img):
+    """All card-shaped blobs (multi-card photos, e.g. forum real-vs-fake line-ups),
+    left-to-right then top-to-bottom. For cropping test images only."""
+    qs = [q for q, _ in _bg_model_candidates(img)]
+    return qs
 
 
 def warp(img, quad, W=CANON_W, H=CANON_H):
@@ -92,7 +183,7 @@ def px_per_mm(quad):
 
 
 # ---------------------------------------------------------------- channels
-def ch_capture(img, quad, info):
+def ch_capture(img, quad, info, canon=None):
     """Capture-domain descriptors. NOT tells. Reported so nobody mistakes a
     capture difference (scan vs phone vs web image) for a print difference."""
     h, w = img.shape[:2]
@@ -102,10 +193,40 @@ def ch_capture(img, quad, info):
     m = max(4, int(min(h, w) * 0.05)); ring = np.ones_like(gray, bool); ring[m:-m, m:-m] = False
     hp = np.abs(gray - cv2.GaussianBlur(gray, (0, 0), 2))
     edge_tex = float(hp[ring].mean())  # textured surroundings (carpet/table) or card border?
-    return {"channel": "capture_profile", "status": "ran",
-            "values": {"width": w, "height": h, "px_per_mm": round(px_per_mm(quad), 2),
-                       "crop": info["crop"], "card_fill": info["card_fill"],
-                       "laplacian_var": round(sharp, 1), "blown_share": round(blown, 4), "edge_ring_texture": round(edge_tex, 2)}}
+    vals = {"width": w, "height": h, "px_per_mm": round(px_per_mm(quad), 2),
+            "crop": info["crop"], "card_fill": info["card_fill"],
+            "laplacian_var": round(sharp, 1), "blown_share": round(blown, 4), "edge_ring_texture": round(edge_tex, 2),
+            "framing": "card_in_scene" if info["card_fill"] < 0.9 else "fills_frame"}
+    if canon is not None:  # sharpness / noise ON THE CARD at a fixed 10 px/mm view, so framing can't move it
+        cg = cv2.cvtColor(canon, cv2.COLOR_BGR2GRAY).astype(np.float32)
+        # content-normalised focus: fine-scale vs coarse-scale detail energy. A busy card and a
+        # plain card in the same capture score alike; a soft/phone capture scores lower.
+        fine = float(cv2.Laplacian(cg, cv2.CV_32F).var())
+        coarse = float(cv2.Laplacian(cv2.GaussianBlur(cg, (0, 0), 2.0), cv2.CV_32F).var()) + 1e-6
+        vals["card_sharpness"] = round(fine / coarse, 2)
+        hp2 = np.abs(cg - cv2.medianBlur(cv2.cvtColor(canon, cv2.COLOR_BGR2GRAY), 3).astype(np.float32))
+        vals["card_fine_noise"] = round(float(np.median(hp2)), 3)
+    return {"channel": "capture_profile", "status": "ran", "values": vals}
+
+
+def capture_match(ra, rb):
+    """Do two capture_profile value dicts look like the same kind of capture?
+    Returns (same: bool, reasons: [str]). Any one reason = CAPTURE MISMATCH.
+    v1 checked px/mm + crop + raw edge-ring texture and fired on 1/3 render-vs-carpet
+    pairs; v2 adds framing (scene vs fills-frame) and on-card sharpness at a fixed scale."""
+    why = []
+    pa, pb = ra["px_per_mm"], rb["px_per_mm"]
+    if max(pa, pb) / max(1e-6, min(pa, pb)) > 1.35:
+        why.append(f"resolution on card {pa} vs {pb} px/mm")
+    if ra.get("framing") != rb.get("framing"):
+        why.append(f"framing {ra.get('framing')} vs {rb.get('framing')} (photo of a card in a scene vs a scan/render/tight crop)")
+    sa, sb = ra.get("card_sharpness"), rb.get("card_sharpness")
+    if sa and sb and max(sa, sb) / max(1e-6, min(sa, sb)) > 1.6:
+        why.append(f"on-card sharpness {sa} vs {sb} (x{max(sa, sb) / max(1e-6, min(sa, sb)):.1f})")
+    ea, eb = ra["edge_ring_texture"], rb["edge_ring_texture"]
+    if ra.get("framing") == rb.get("framing") == "card_in_scene" and max(ea, eb) / max(1e-3, min(ea, eb)) > 2.5:
+        why.append(f"background texture {ea} vs {eb}")
+    return (len(why) == 0, why)
 
 
 def ch_halftone(img, quad):
@@ -118,6 +239,10 @@ def ch_halftone(img, quad):
         return {"channel": "halftone_periodicity", "status": "could_not_run",
                 "reason_code": "below_resolution",
                 "detail": f"{ppm:.1f} px/mm on card; need >= {MIN_PX_PER_MM_HALFTONE} (about 380 dpi) to resolve a print screen"}
+    return _halftone_core(img, quad, ppm)
+
+
+def _halftone_core(img, quad, ppm):
     # sample patches inside the card (avoid edges), native resolution
     xs = np.linspace(quad[:, 0].min(), quad[:, 0].max(), 7)[1:-1]
     ys = np.linspace(quad[:, 1].min(), quad[:, 1].max(), 9)[1:-1]
@@ -147,13 +272,39 @@ def ch_halftone(img, quad):
             b = S[band]
             band_fracs.append(float(b.sum() / tot))
             peak_scores.append(float(np.sort(b)[-8:].mean() / (np.median(b) + 1e-9)))
-    if len(peak_scores) < 4:
+    if len(peak_scores) < 2:
         return {"channel": "halftone_periodicity", "status": "could_not_run",
-                "reason_code": "region_unreadable", "detail": "fewer than 4 coloured patches"}
+                "reason_code": "region_unreadable", "detail": "fewer than 2 coloured patches"}
     return {"channel": "halftone_periodicity", "status": "ran",
             "values": {"peak_to_median": round(float(np.median(peak_scores)), 2),
                        "band_power_frac": round(float(np.median(band_fracs)), 4),
                        "patches": len(peak_scores), "px_per_mm": round(ppm, 2)}}
+
+
+
+def ch_halftone_known_scale(img, ppm, target_ppm=24.0):
+    """Screen-periodicity read on a close-up/macro whose scale is KNOWN (scale bar, ruler
+    or the capture app's fixed macro distance) instead of measured from a card outline.
+    Resamples to ~24 px/mm so the 4-12 lines/mm band sits where ch_halftone expects it,
+    then scores 128 px tiles over the whole frame. Same output contract."""
+    if ppm is None or ppm < MIN_PX_PER_MM_HALFTONE:
+        return {"channel": "halftone_periodicity", "status": "could_not_run", "reason_code": "below_resolution",
+                "detail": f"{ppm} px/mm; need >= {MIN_PX_PER_MM_HALFTONE}"}
+    fov_mm = min(img.shape[:2]) / ppm  # narrow microscope fields: keep >= ~300 px across
+    target_ppm = max(target_ppm, 300.0 / max(fov_mm, 1e-6))
+    f = target_ppm / ppm
+    im = cv2.resize(img, None, fx=f, fy=f, interpolation=cv2.INTER_AREA) if f < 1 else img
+    eff = ppm * min(f, 1.0)
+    h, w = im.shape[:2]
+    if min(h, w) < 160:
+        return {"channel": "halftone_periodicity", "status": "could_not_run", "reason_code": "region_too_small",
+                "detail": f"{w}x{h} px after resampling to {eff:.0f} px/mm (< 6.7 mm of card in view)"}
+    quad = np.array([[0, 0], [w - 1, 0], [w - 1, h - 1], [0, h - 1]], np.float32)
+    # reuse ch_halftone's spectral core by faking a card-sized quad at the effective scale
+    out = _halftone_core(im, quad, eff)
+    if out["status"] == "ran":
+        out["values"]["source_px_per_mm"] = round(float(ppm), 1)
+    return out
 
 
 def ch_text_edges(canon):
@@ -236,9 +387,9 @@ def ch_color_hist(canon_a, canon_b):
 
 def measure(path, side="front"):
     img = load(path)
-    quad, info = find_card(img)
+    quad, info = find_card(img, side)
     canon = warp(img, quad)
-    out = [ch_capture(img, quad, info), ch_halftone(img, quad), ch_text_edges(canon), ch_centering(canon)]
+    out = [ch_capture(img, quad, info, canon), ch_halftone(img, quad), ch_text_edges(canon), ch_centering(canon)]
     if side == "back":
         out.append(ch_back_blue(canon))
     return out, canon

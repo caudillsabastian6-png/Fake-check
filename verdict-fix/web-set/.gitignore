@@ -1,0 +1,6 @@
+# images are third-party, not committed
+raw/
+crops/
+*.jpg
+*.png
+*.webp

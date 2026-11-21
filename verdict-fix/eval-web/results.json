@@ -1,0 +1,1406 @@
+{
+ "denominators": {
+  "locked_before_measurement": true,
+  "pairs": {
+   "same_photo": 13,
+   "same_photo_genuine_control": 4,
+   "composite_two_photos": 1,
+   "same_session_not_same_photo": 9
+  },
+  "pair_ids": {
+   "same_session_not_same_photo|SS08": [
+    "ef23015_realstamp",
+    "ef23015_fakestamp"
+   ],
+   "same_session_not_same_photo|SS09": [
+    "cgcl_starng",
+    "cgcl_star1"
+   ],
+   "same_session_not_same_photo|SS01": [
+    "cgcd_machreal",
+    "cgcd_machfake"
+   ],
+   "same_session_not_same_photo|SS02": [
+    "cgcd_backreal",
+    "cgcd_backfake"
+   ],
+   "same_session_not_same_photo|SS03": [
+    "cgcd_taxireal",
+    "cgcd_taxifake"
+   ],
+   "same_session_not_same_photo|SS04": [
+    "cgcd_czfake",
+    "cgcd_czreal"
+   ],
+   "same_session_not_same_photo|SS05": [
+    "cgcu_obvreal",
+    "cgcu_obvfake"
+   ],
+   "same_session_not_same_photo|SS06": [
+    "flip_regreal",
+    "flip_regfake"
+   ],
+   "same_session_not_same_photo|SS07": [
+    "flip_backreal",
+    "flip_backfake"
+   ],
+   "same_photo|SP01": [
+    "ef17741_3270_L",
+    "ef17741_3270_R"
+   ],
+   "same_photo|SP02": [
+    "ef17741_3275_L",
+    "ef17741_3275_R"
+   ],
+   "same_photo|SP03": [
+    "ef17741_3277_L",
+    "ef17741_3277_R"
+   ],
+   "same_photo|SP04": [
+    "ef17741_3279_L",
+    "ef17741_3279_R"
+   ],
+   "same_photo|SP05": [
+    "ef17741_3280_L",
+    "ef17741_3280_R"
+   ],
+   "same_photo|SP06": [
+    "ef17741_3283_L",
+    "ef17741_3283_R"
+   ],
+   "same_photo|SP07": [
+    "ef17741_3286_L",
+    "ef17741_3286_R"
+   ],
+   "same_photo|SP08": [
+    "ef17741_3288_L",
+    "ef17741_3288_R"
+   ],
+   "same_photo|SP09": [
+    "ef17741_3292_L",
+    "ef17741_3292_R"
+   ],
+   "same_photo|SP10": [
+    "ef17741_3296_L",
+    "ef17741_3296_R"
+   ],
+   "same_photo|SP11": [
+    "ef13268_a_L",
+    "ef13268_a_R"
+   ],
+   "same_photo|SP12": [
+    "ef13268_d_R",
+    "ef13268_d_L"
+   ],
+   "same_photo|SP13": [
+    "ef23015_68c_L",
+    "ef23015_68c_M"
+   ],
+   "same_photo_genuine_control|GG01": [
+    "ef17741_3283_L",
+    "ef17741_3283_LB"
+   ],
+   "same_photo_genuine_control|GG02": [
+    "ef17741_3288_L",
+    "ef17741_3288_LB"
+   ],
+   "same_photo_genuine_control|GG03": [
+    "ef17741_3296_L",
+    "ef17741_3296_LB"
+   ],
+   "same_photo_genuine_control|GG04": [
+    "ef17741_3277_L",
+    "ef17741_3277_LT"
+   ],
+   "composite_two_photos|CP01": [
+    "tci_phole_L",
+    "tci_phole_R"
+   ]
+  },
+  "single_card_images_by_photo_type": {
+   "lab_scan_or_photo|front": {
+    "GENUINE": 3,
+    "FAKE": 3
+   },
+   "lab_scan_or_photo|back": {
+    "GENUINE": 1,
+    "FAKE": 1
+   },
+   "phone_photo_scene|front": {
+    "GENUINE": 16,
+    "FAKE": 12
+   },
+   "phone_photo_scene|back": {
+    "GENUINE": 2,
+    "FAKE": 2
+   },
+   "scan_or_flat_photo|front": {
+    "GENUINE": 0,
+    "FAKE": 1
+   }
+  },
+  "rosette_lane_candidates_ge15ppm": {
+   "GENUINE": 13,
+   "FAKE": 11,
+   "ids": [
+    "ef23015_realstamp",
+    "ef23015_fakestamp",
+    "ef23015_phonefake",
+    "ef64743_b01",
+    "ef64743_b02",
+    "ef64743_b03",
+    "ef64743_b04",
+    "ef64743_b05",
+    "ef64743_b06",
+    "cgcl_starng",
+    "cgcl_star1",
+    "cgcl_star2",
+    "cgcd_taxireal",
+    "cgcd_taxifake",
+    "poki_c1",
+    "poki_c2",
+    "poki_c3",
+    "poki_c4",
+    "ef13268_d_R",
+    "ef13268_d_L",
+    "ef23015_68c_L",
+    "ef23015_68c_M",
+    "tci_phole_L",
+    "tci_phole_R"
+   ]
+  }
+ },
+ "pairs": [
+  {
+   "kind": "same_photo",
+   "pair": "SP01",
+   "ref": "ef17741_3270_L",
+   "cand": "ef17741_3270_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [
+    "softer_small_print"
+   ],
+   "lightness_delta_L": -49.2,
+   "values_ref": {
+    "capture_profile.width": 544,
+    "capture_profile.height": 696,
+    "capture_profile.px_per_mm": 8.26,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 652.1,
+    "capture_profile.blown_share": 0.0094,
+    "capture_profile.edge_ring_texture": 8.62,
+    "capture_profile.card_sharpness": 57.51,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 3.552
+   },
+   "values_cand": {
+    "capture_profile.width": 502,
+    "capture_profile.height": 696,
+    "capture_profile.px_per_mm": 7.93,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 395.9,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 6.73,
+    "capture_profile.card_sharpness": 47.26,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 1.983
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP02",
+   "ref": "ef17741_3275_L",
+   "cand": "ef17741_3275_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": 0.18,
+   "values_ref": {
+    "capture_profile.width": 512,
+    "capture_profile.height": 712,
+    "capture_profile.px_per_mm": 8.1,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 768.8,
+    "capture_profile.blown_share": 0.0086,
+    "capture_profile.edge_ring_texture": 7.09,
+    "capture_profile.card_sharpness": 37.27,
+    "capture_profile.card_fine_noise": 0.0
+   },
+   "values_cand": {
+    "capture_profile.width": 491,
+    "capture_profile.height": 712,
+    "capture_profile.px_per_mm": 7.93,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 848.1,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 7.09,
+    "capture_profile.card_sharpness": 42.32,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 1.906
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP03",
+   "ref": "ef17741_3277_L",
+   "cand": "ef17741_3277_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": false,
+   "capture_why": [
+    "framing card_in_scene vs fills_frame (photo of a card in a scene vs a scan/render/tight crop)",
+    "on-card sharpness 14.66 vs 23.49 (x1.6)"
+   ],
+   "flags": [],
+   "lightness_delta_L": 15.61,
+   "values_ref": {
+    "capture_profile.width": 342,
+    "capture_profile.height": 352,
+    "capture_profile.px_per_mm": 3.96,
+    "capture_profile.card_fill": 0.721,
+    "capture_profile.laplacian_var": 1624.5,
+    "capture_profile.blown_share": 0.0058,
+    "capture_profile.edge_ring_texture": 7.76,
+    "capture_profile.card_sharpness": 14.66,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 1.763
+   },
+   "values_cand": {
+    "capture_profile.width": 352,
+    "capture_profile.height": 352,
+    "capture_profile.px_per_mm": 4.78,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 1683.2,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 9.12,
+    "capture_profile.card_sharpness": 23.49,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 1.568
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP04",
+   "ref": "ef17741_3279_L",
+   "cand": "ef17741_3279_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": -13.5,
+   "values_ref": {
+    "capture_profile.width": 331,
+    "capture_profile.height": 480,
+    "capture_profile.px_per_mm": 4.38,
+    "capture_profile.card_fill": 0.658,
+    "capture_profile.laplacian_var": 1656.9,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 6.23,
+    "capture_profile.card_sharpness": 16.29,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 3.314
+   },
+   "values_cand": {
+    "capture_profile.width": 299,
+    "capture_profile.height": 432,
+    "capture_profile.px_per_mm": 3.99,
+    "capture_profile.card_fill": 0.685,
+    "capture_profile.laplacian_var": 1522.7,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 6.71,
+    "capture_profile.card_sharpness": 13.07,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.397
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP05",
+   "ref": "ef17741_3280_L",
+   "cand": "ef17741_3280_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": -10.72,
+   "values_ref": {
+    "capture_profile.width": 362,
+    "capture_profile.height": 560,
+    "capture_profile.px_per_mm": 4.86,
+    "capture_profile.card_fill": 0.625,
+    "capture_profile.laplacian_var": 932.6,
+    "capture_profile.blown_share": 0.0022,
+    "capture_profile.edge_ring_texture": 6.24,
+    "capture_profile.card_sharpness": 11.7,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 3.357
+   },
+   "values_cand": {
+    "capture_profile.width": 341,
+    "capture_profile.height": 544,
+    "capture_profile.px_per_mm": 4.82,
+    "capture_profile.card_fill": 0.695,
+    "capture_profile.laplacian_var": 1290.4,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 8.43,
+    "capture_profile.card_sharpness": 12.23,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.599
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP06",
+   "ref": "ef17741_3283_L",
+   "cand": "ef17741_3283_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": false,
+   "capture_why": [
+    "framing fills_frame vs card_in_scene (photo of a card in a scene vs a scan/render/tight crop)",
+    "on-card sharpness 21.65 vs 13.37 (x1.6)"
+   ],
+   "flags": [],
+   "lightness_delta_L": -18.51,
+   "values_ref": {
+    "capture_profile.width": 306,
+    "capture_profile.height": 424,
+    "capture_profile.px_per_mm": 4.82,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 1252.2,
+    "capture_profile.blown_share": 0.0008,
+    "capture_profile.edge_ring_texture": 6.78,
+    "capture_profile.card_sharpness": 21.65,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 3.144
+   },
+   "values_cand": {
+    "capture_profile.width": 306,
+    "capture_profile.height": 424,
+    "capture_profile.px_per_mm": 3.76,
+    "capture_profile.card_fill": 0.6,
+    "capture_profile.laplacian_var": 1057.6,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 5.54,
+    "capture_profile.card_sharpness": 13.37,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.856
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP07",
+   "ref": "ef17741_3286_L",
+   "cand": "ef17741_3286_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": 1.08,
+   "values_ref": {
+    "capture_profile.width": 384,
+    "capture_profile.height": 536,
+    "capture_profile.px_per_mm": 5.09,
+    "capture_profile.card_fill": 0.696,
+    "capture_profile.laplacian_var": 1182.5,
+    "capture_profile.blown_share": 0.0048,
+    "capture_profile.edge_ring_texture": 5.39,
+    "capture_profile.card_sharpness": 17.37,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 1.653
+   },
+   "values_cand": {
+    "capture_profile.width": 373,
+    "capture_profile.height": 536,
+    "capture_profile.px_per_mm": 4.39,
+    "capture_profile.card_fill": 0.545,
+    "capture_profile.laplacian_var": 1958.6,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 7.04,
+    "capture_profile.card_sharpness": 16.67,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 1.567
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP08",
+   "ref": "ef17741_3288_L",
+   "cand": "ef17741_3288_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": -2.92,
+   "values_ref": {
+    "capture_profile.width": 309,
+    "capture_profile.height": 424,
+    "capture_profile.px_per_mm": 3.97,
+    "capture_profile.card_fill": 0.692,
+    "capture_profile.laplacian_var": 767.9,
+    "capture_profile.blown_share": 0.0001,
+    "capture_profile.edge_ring_texture": 5.08,
+    "capture_profile.card_sharpness": 12.31,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.981
+   },
+   "values_cand": {
+    "capture_profile.width": 299,
+    "capture_profile.height": 424,
+    "capture_profile.px_per_mm": 3.8,
+    "capture_profile.card_fill": 0.652,
+    "capture_profile.laplacian_var": 943.7,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 5.42,
+    "capture_profile.card_sharpness": 13.3,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 3.219
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP09",
+   "ref": "ef17741_3292_L",
+   "cand": "ef17741_3292_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [
+    "softer_small_print"
+   ],
+   "lightness_delta_L": -12.74,
+   "values_ref": {
+    "capture_profile.width": 491,
+    "capture_profile.height": 744,
+    "capture_profile.px_per_mm": 8.11,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 1304.4,
+    "capture_profile.blown_share": 0.002,
+    "capture_profile.edge_ring_texture": 9.77,
+    "capture_profile.card_sharpness": 49.41,
+    "capture_profile.card_fine_noise": 1.0,
+    "small_text_edges.edge_p99_over_contrast": 3.521
+   },
+   "values_cand": {
+    "capture_profile.width": 501,
+    "capture_profile.height": 744,
+    "capture_profile.px_per_mm": 8.19,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 785.6,
+    "capture_profile.blown_share": 0.0001,
+    "capture_profile.edge_ring_texture": 7.69,
+    "capture_profile.card_sharpness": 47.58,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.199
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP10",
+   "ref": "ef17741_3296_L",
+   "cand": "ef17741_3296_R",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": false,
+   "capture_why": [
+    "framing fills_frame vs card_in_scene (photo of a card in a scene vs a scan/render/tight crop)"
+   ],
+   "flags": [],
+   "lightness_delta_L": -9.16,
+   "values_ref": {
+    "capture_profile.width": 312,
+    "capture_profile.height": 416,
+    "capture_profile.px_per_mm": 4.83,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 630.0,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 5.23,
+    "capture_profile.card_sharpness": 17.82,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.521
+   },
+   "values_cand": {
+    "capture_profile.width": 312,
+    "capture_profile.height": 496,
+    "capture_profile.px_per_mm": 3.77,
+    "capture_profile.card_fill": 0.514,
+    "capture_profile.laplacian_var": 551.0,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 4.79,
+    "capture_profile.card_sharpness": 13.47,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.675
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP12",
+   "ref": "ef13268_d_R",
+   "cand": "ef13268_d_L",
+   "cand_label": "FAKE",
+   "side": "back",
+   "capture_same": false,
+   "capture_why": [
+    "framing card_in_scene vs fills_frame (photo of a card in a scene vs a scan/render/tight crop)",
+    "on-card sharpness 152.14 vs 92.98 (x1.6)"
+   ],
+   "flags": [
+    "softer_small_print",
+    "flatter_back_blue"
+   ],
+   "lightness_delta_L": 6.21,
+   "values_ref": {
+    "capture_profile.width": 1788,
+    "capture_profile.height": 2059,
+    "capture_profile.px_per_mm": 20.82,
+    "capture_profile.card_fill": 0.653,
+    "capture_profile.laplacian_var": 140.7,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 2.32,
+    "capture_profile.card_sharpness": 152.14,
+    "capture_profile.card_fine_noise": 1.0,
+    "halftone_periodicity.peak_to_median": 215.16,
+    "halftone_periodicity.band_power_frac": 0.1071,
+    "halftone_periodicity.patches": 30,
+    "halftone_periodicity.px_per_mm": 20.82,
+    "small_text_edges.edge_p99_over_contrast": 3.151,
+    "back_blue.blue_frac": 0.555,
+    "back_blue.L_mean": 34.98,
+    "back_blue.a_mean": 13.02,
+    "back_blue.b_mean": -39.45,
+    "back_blue.hue_deg": 288.3,
+    "back_blue.shade_spread_L": 45.64,
+    "back_blue.frame_minus_swirl_L": -18.11
+   },
+   "values_cand": {
+    "capture_profile.width": 1664,
+    "capture_profile.height": 1840,
+    "capture_profile.px_per_mm": 23.65,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 67.1,
+    "capture_profile.blown_share": 0.0053,
+    "capture_profile.edge_ring_texture": 2.68,
+    "capture_profile.card_sharpness": 92.98,
+    "capture_profile.card_fine_noise": 1.0,
+    "halftone_periodicity.peak_to_median": 135.48,
+    "halftone_periodicity.band_power_frac": 0.1602,
+    "halftone_periodicity.patches": 32,
+    "halftone_periodicity.px_per_mm": 23.65,
+    "small_text_edges.edge_p99_over_contrast": 2.087,
+    "back_blue.blue_frac": 0.47,
+    "back_blue.L_mean": 44.8,
+    "back_blue.a_mean": 8.5,
+    "back_blue.b_mean": -40.41,
+    "back_blue.hue_deg": 281.9,
+    "back_blue.shade_spread_L": 31.18,
+    "back_blue.frame_minus_swirl_L": -15.47
+   }
+  },
+  {
+   "kind": "same_photo",
+   "pair": "SP13",
+   "ref": "ef23015_68c_L",
+   "cand": "ef23015_68c_M",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": false,
+   "capture_why": [
+    "framing card_in_scene vs fills_frame (photo of a card in a scene vs a scan/render/tight crop)",
+    "on-card sharpness 99.78 vs 176.93 (x1.8)"
+   ],
+   "flags": [
+    "softer_small_print"
+   ],
+   "lightness_delta_L": -24.7,
+   "values_ref": {
+    "capture_profile.width": 1350,
+    "capture_profile.height": 1960,
+    "capture_profile.px_per_mm": 18.45,
+    "capture_profile.card_fill": 0.72,
+    "capture_profile.laplacian_var": 267.2,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 2.4,
+    "capture_profile.card_sharpness": 99.78,
+    "capture_profile.card_fine_noise": 1.0,
+    "halftone_periodicity.peak_to_median": 110.02,
+    "halftone_periodicity.band_power_frac": 0.045,
+    "halftone_periodicity.patches": 31,
+    "halftone_periodicity.px_per_mm": 18.45,
+    "small_text_edges.edge_p99_over_contrast": 5.199
+   },
+   "values_cand": {
+    "capture_profile.width": 1371,
+    "capture_profile.height": 1960,
+    "capture_profile.px_per_mm": 22.0,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 338.9,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 2.26,
+    "capture_profile.card_sharpness": 176.93,
+    "capture_profile.card_fine_noise": 1.0,
+    "halftone_periodicity.peak_to_median": 542.21,
+    "halftone_periodicity.band_power_frac": 0.0706,
+    "halftone_periodicity.patches": 26,
+    "halftone_periodicity.px_per_mm": 22.0,
+    "small_text_edges.edge_p99_over_contrast": 2.351
+   }
+  },
+  {
+   "kind": "same_photo_genuine_control",
+   "pair": "GG01",
+   "ref": "ef17741_3283_L",
+   "cand": "ef17741_3283_LB",
+   "cand_label": "GENUINE",
+   "side": "front",
+   "capture_same": false,
+   "capture_why": [
+    "framing fills_frame vs card_in_scene (photo of a card in a scene vs a scan/render/tight crop)"
+   ],
+   "flags": [],
+   "lightness_delta_L": 10.18,
+   "values_ref": {
+    "capture_profile.width": 306,
+    "capture_profile.height": 424,
+    "capture_profile.px_per_mm": 4.82,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 1252.2,
+    "capture_profile.blown_share": 0.0008,
+    "capture_profile.edge_ring_texture": 6.78,
+    "capture_profile.card_sharpness": 21.65,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 3.144
+   },
+   "values_cand": {
+    "capture_profile.width": 306,
+    "capture_profile.height": 400,
+    "capture_profile.px_per_mm": 3.99,
+    "capture_profile.card_fill": 0.66,
+    "capture_profile.laplacian_var": 937.4,
+    "capture_profile.blown_share": 0.0009,
+    "capture_profile.edge_ring_texture": 3.77,
+    "capture_profile.card_sharpness": 13.63,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 3.022
+   }
+  },
+  {
+   "kind": "same_photo_genuine_control",
+   "pair": "GG02",
+   "ref": "ef17741_3288_L",
+   "cand": "ef17741_3288_LB",
+   "cand_label": "GENUINE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": 6.25,
+   "values_ref": {
+    "capture_profile.width": 309,
+    "capture_profile.height": 424,
+    "capture_profile.px_per_mm": 3.97,
+    "capture_profile.card_fill": 0.692,
+    "capture_profile.laplacian_var": 767.9,
+    "capture_profile.blown_share": 0.0001,
+    "capture_profile.edge_ring_texture": 5.08,
+    "capture_profile.card_sharpness": 12.31,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.981
+   },
+   "values_cand": {
+    "capture_profile.width": 309,
+    "capture_profile.height": 424,
+    "capture_profile.px_per_mm": 4.26,
+    "capture_profile.card_fill": 0.762,
+    "capture_profile.laplacian_var": 692.3,
+    "capture_profile.blown_share": 0.0014,
+    "capture_profile.edge_ring_texture": 5.45,
+    "capture_profile.card_sharpness": 12.32,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.873
+   }
+  },
+  {
+   "kind": "same_photo_genuine_control",
+   "pair": "GG03",
+   "ref": "ef17741_3296_L",
+   "cand": "ef17741_3296_LB",
+   "cand_label": "GENUINE",
+   "side": "front",
+   "capture_same": false,
+   "capture_why": [
+    "framing fills_frame vs card_in_scene (photo of a card in a scene vs a scan/render/tight crop)"
+   ],
+   "flags": [],
+   "lightness_delta_L": -9.68,
+   "values_ref": {
+    "capture_profile.width": 312,
+    "capture_profile.height": 416,
+    "capture_profile.px_per_mm": 4.83,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 630.0,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 5.23,
+    "capture_profile.card_sharpness": 17.82,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.521
+   },
+   "values_cand": {
+    "capture_profile.width": 312,
+    "capture_profile.height": 400,
+    "capture_profile.px_per_mm": 3.92,
+    "capture_profile.card_fill": 0.683,
+    "capture_profile.laplacian_var": 548.4,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 3.53,
+    "capture_profile.card_sharpness": 12.59,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.795
+   }
+  },
+  {
+   "kind": "same_photo_genuine_control",
+   "pair": "GG04",
+   "ref": "ef17741_3277_L",
+   "cand": "ef17741_3277_LT",
+   "cand_label": "GENUINE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": 10.03,
+   "values_ref": {
+    "capture_profile.width": 342,
+    "capture_profile.height": 352,
+    "capture_profile.px_per_mm": 3.96,
+    "capture_profile.card_fill": 0.721,
+    "capture_profile.laplacian_var": 1624.5,
+    "capture_profile.blown_share": 0.0058,
+    "capture_profile.edge_ring_texture": 7.76,
+    "capture_profile.card_sharpness": 14.66,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 1.763
+   },
+   "values_cand": {
+    "capture_profile.width": 342,
+    "capture_profile.height": 416,
+    "capture_profile.px_per_mm": 4.2,
+    "capture_profile.card_fill": 0.686,
+    "capture_profile.laplacian_var": 1621.7,
+    "capture_profile.blown_share": 0.005,
+    "capture_profile.edge_ring_texture": 5.53,
+    "capture_profile.card_sharpness": 17.68,
+    "capture_profile.card_fine_noise": 0.0,
+    "small_text_edges.edge_p99_over_contrast": 2.407
+   }
+  },
+  {
+   "kind": "same_session_not_same_photo",
+   "pair": "SS01",
+   "ref": "cgcd_machreal",
+   "cand": "cgcd_machfake",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": false,
+   "capture_why": [
+    "on-card sharpness 131.38 vs 73.01 (x1.8)"
+   ],
+   "flags": [],
+   "lightness_delta_L": -0.27,
+   "values_ref": {
+    "capture_profile.width": 575,
+    "capture_profile.height": 800,
+    "capture_profile.px_per_mm": 9.1,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 4370.4,
+    "capture_profile.blown_share": 0.0096,
+    "capture_profile.edge_ring_texture": 2.49,
+    "capture_profile.card_sharpness": 131.38,
+    "capture_profile.card_fine_noise": 1.0,
+    "small_text_edges.edge_p99_over_contrast": 4.071
+   },
+   "values_cand": {
+    "capture_profile.width": 517,
+    "capture_profile.height": 719,
+    "capture_profile.px_per_mm": 8.17,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 5115.3,
+    "capture_profile.blown_share": 0.0233,
+    "capture_profile.edge_ring_texture": 3.86,
+    "capture_profile.card_sharpness": 73.01,
+    "capture_profile.card_fine_noise": 2.0,
+    "small_text_edges.edge_p99_over_contrast": 3.64
+   }
+  },
+  {
+   "kind": "same_session_not_same_photo",
+   "pair": "SS02",
+   "ref": "cgcd_backreal",
+   "cand": "cgcd_backfake",
+   "cand_label": "FAKE",
+   "side": "back",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": -9.69,
+   "values_ref": {
+    "capture_profile.width": 574,
+    "capture_profile.height": 792,
+    "capture_profile.px_per_mm": 9.04,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 2795.3,
+    "capture_profile.blown_share": 0.0142,
+    "capture_profile.edge_ring_texture": 9.2,
+    "capture_profile.card_sharpness": 116.92,
+    "capture_profile.card_fine_noise": 2.0,
+    "small_text_edges.edge_p99_over_contrast": 2.631,
+    "back_blue.blue_frac": 0.566,
+    "back_blue.L_mean": 30.89,
+    "back_blue.a_mean": 20.36,
+    "back_blue.b_mean": -40.77,
+    "back_blue.hue_deg": 296.5,
+    "back_blue.shade_spread_L": 38.81,
+    "back_blue.frame_minus_swirl_L": -18.36
+   },
+   "values_cand": {
+    "capture_profile.width": 575,
+    "capture_profile.height": 807,
+    "capture_profile.px_per_mm": 9.14,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 2014.1,
+    "capture_profile.blown_share": 0.0057,
+    "capture_profile.edge_ring_texture": 7.75,
+    "capture_profile.card_sharpness": 90.38,
+    "capture_profile.card_fine_noise": 2.0,
+    "small_text_edges.edge_p99_over_contrast": 3.794,
+    "back_blue.blue_frac": 0.602,
+    "back_blue.L_mean": 30.71,
+    "back_blue.a_mean": 15.91,
+    "back_blue.b_mean": -35.81,
+    "back_blue.hue_deg": 293.9,
+    "back_blue.shade_spread_L": 38.42,
+    "back_blue.frame_minus_swirl_L": -17.89
+   }
+  },
+  {
+   "kind": "same_session_not_same_photo",
+   "pair": "SS04",
+   "ref": "cgcd_czreal",
+   "cand": "cgcd_czfake",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": -0.01,
+   "values_ref": {
+    "capture_profile.width": 556,
+    "capture_profile.height": 767,
+    "capture_profile.px_per_mm": 8.33,
+    "capture_profile.card_fill": 0.903,
+    "capture_profile.laplacian_var": 3777.0,
+    "capture_profile.blown_share": 0.0038,
+    "capture_profile.edge_ring_texture": 23.19,
+    "capture_profile.card_sharpness": 70.51,
+    "capture_profile.card_fine_noise": 1.0,
+    "small_text_edges.edge_p99_over_contrast": 3.504
+   },
+   "values_cand": {
+    "capture_profile.width": 517,
+    "capture_profile.height": 723,
+    "capture_profile.px_per_mm": 8.2,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 4812.0,
+    "capture_profile.blown_share": 0.0262,
+    "capture_profile.edge_ring_texture": 6.51,
+    "capture_profile.card_sharpness": 79.42,
+    "capture_profile.card_fine_noise": 2.0,
+    "small_text_edges.edge_p99_over_contrast": 3.231
+   }
+  },
+  {
+   "kind": "same_session_not_same_photo",
+   "pair": "SS05",
+   "ref": "cgcu_obvreal",
+   "cand": "cgcu_obvfake",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": 8.02,
+   "values_ref": {
+    "capture_profile.width": 589,
+    "capture_profile.height": 823,
+    "capture_profile.px_per_mm": 8.94,
+    "capture_profile.card_fill": 0.912,
+    "capture_profile.laplacian_var": 4622.3,
+    "capture_profile.blown_share": 0.0018,
+    "capture_profile.edge_ring_texture": 12.06,
+    "capture_profile.card_sharpness": 161.23,
+    "capture_profile.card_fine_noise": 2.0,
+    "small_text_edges.edge_p99_over_contrast": 3.566
+   },
+   "values_cand": {
+    "capture_profile.width": 529,
+    "capture_profile.height": 740,
+    "capture_profile.px_per_mm": 8.02,
+    "capture_profile.card_fill": 0.913,
+    "capture_profile.laplacian_var": 6115.6,
+    "capture_profile.blown_share": 0.0019,
+    "capture_profile.edge_ring_texture": 12.16,
+    "capture_profile.card_sharpness": 168.34,
+    "capture_profile.card_fine_noise": 2.0,
+    "small_text_edges.edge_p99_over_contrast": 4.128
+   }
+  },
+  {
+   "kind": "same_session_not_same_photo",
+   "pair": "SS06",
+   "ref": "flip_regreal",
+   "cand": "flip_regfake",
+   "cand_label": "FAKE",
+   "side": "front",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [],
+   "lightness_delta_L": -22.62,
+   "values_ref": {
+    "capture_profile.width": 533,
+    "capture_profile.height": 947,
+    "capture_profile.px_per_mm": 9.6,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 1738.4,
+    "capture_profile.blown_share": 0.0002,
+    "capture_profile.edge_ring_texture": 2.53,
+    "capture_profile.card_sharpness": 133.72,
+    "capture_profile.card_fine_noise": 1.0
+   },
+   "values_cand": {
+    "capture_profile.width": 531,
+    "capture_profile.height": 944,
+    "capture_profile.px_per_mm": 9.56,
+    "capture_profile.card_fill": 1.0,
+    "capture_profile.laplacian_var": 1468.9,
+    "capture_profile.blown_share": 0.0008,
+    "capture_profile.edge_ring_texture": 2.28,
+    "capture_profile.card_sharpness": 182.0,
+    "capture_profile.card_fine_noise": 1.0
+   }
+  },
+  {
+   "kind": "same_session_not_same_photo",
+   "pair": "SS07",
+   "ref": "flip_backreal",
+   "cand": "flip_backfake",
+   "cand_label": "FAKE",
+   "side": "back",
+   "capture_same": true,
+   "capture_why": [],
+   "flags": [
+    "flatter_back_blue"
+   ],
+   "lightness_delta_L": -18.48,
+   "values_ref": {
+    "capture_profile.width": 651,
+    "capture_profile.height": 1158,
+    "capture_profile.px_per_mm": 8.66,
+    "capture_profile.card_fill": 0.558,
+    "capture_profile.laplacian_var": 762.7,
+    "capture_profile.blown_share": 0.0,
+    "capture_profile.edge_ring_texture": 2.02,
+    "capture_profile.card_sharpness": 87.62,
+    "capture_profile.card_fine_noise": 1.0,
+    "small_text_edges.edge_p99_over_contrast": 1.881,
+    "back_blue.blue_frac": 0.411,
+    "back_blue.L_mean": 28.86,
+    "back_blue.a_mean": 6.59,
+    "back_blue.b_mean": -27.88,
+    "back_blue.hue_deg": 283.3,
+    "back_blue.shade_spread_L": 23.99,
+    "back_blue.frame_minus_swirl_L": -9.94
+   },
+   "values_cand": {
+    "capture_profile.width": 632,
+    "capture_profile.height": 1124,
+    "capture_profile.px_per_mm": 7.86,
+    "capture_profile.card_fill": 0.482,
+    "capture_profile.laplacian_var": 440.9,
+    "capture_profile.blown_share": 0.0092,
+    "capture_profile.edge_ring_texture": 2.71,
+    "capture_profile.card_sharpness": 65.25,
+    "capture_profile.card_fine_noise": 1.0,
+    "small_text_edges.edge_p99_over_contrast": 1.825,
+    "back_blue.blue_frac": 0.297,
+    "back_blue.L_mean": 28.63,
+    "back_blue.a_mean": 2.62,
+    "back_blue.b_mean": -17.02,
+    "back_blue.hue_deg": 278.7,
+    "back_blue.shade_spread_L": 16.22,
+    "back_blue.frame_minus_swirl_L": -2.43
+   }
+  }
+ ],
+ "rosette": [
+  {
+   "id": "ef23015_realstamp",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 320.21,
+     "band_power_frac": 0.6461,
+     "patches": 25,
+     "px_per_mm": 52.78,
+     "source_px_per_mm": 190.0
+    }
+   }
+  },
+  {
+   "id": "ef23015_fakestamp",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 305.35,
+     "band_power_frac": 0.6613,
+     "patches": 25,
+     "px_per_mm": 52.78,
+     "source_px_per_mm": 190.0
+    }
+   }
+  },
+  {
+   "id": "ef23015_phonefake",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "could_not_run",
+    "reason_code": "region_unreadable",
+    "detail": "fewer than 2 coloured patches"
+   }
+  },
+  {
+   "id": "ef64743_b01",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 59.18,
+     "band_power_frac": 0.8081,
+     "patches": 25,
+     "px_per_mm": 128.12,
+     "source_px_per_mm": 615.0
+    }
+   }
+  },
+  {
+   "id": "ef64743_b02",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 50.72,
+     "band_power_frac": 0.787,
+     "patches": 25,
+     "px_per_mm": 128.12,
+     "source_px_per_mm": 615.0
+    }
+   }
+  },
+  {
+   "id": "ef64743_b03",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 42.98,
+     "band_power_frac": 0.7613,
+     "patches": 25,
+     "px_per_mm": 128.12,
+     "source_px_per_mm": 615.0
+    }
+   }
+  },
+  {
+   "id": "ef64743_b04",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 39.07,
+     "band_power_frac": 0.7537,
+     "patches": 25,
+     "px_per_mm": 128.12,
+     "source_px_per_mm": 615.0
+    }
+   }
+  },
+  {
+   "id": "ef64743_b05",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 39.08,
+     "band_power_frac": 0.7483,
+     "patches": 25,
+     "px_per_mm": 128.12,
+     "source_px_per_mm": 615.0
+    }
+   }
+  },
+  {
+   "id": "ef64743_b06",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 48.07,
+     "band_power_frac": 0.7496,
+     "patches": 25,
+     "px_per_mm": 128.12,
+     "source_px_per_mm": 615.0
+    }
+   }
+  },
+  {
+   "id": "cgcl_starng",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 18.02,
+     "band_power_frac": 0.2867,
+     "patches": 15,
+     "px_per_mm": 51.55,
+     "source_px_per_mm": 100.0
+    }
+   }
+  },
+  {
+   "id": "cgcl_star1",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 107.51,
+     "band_power_frac": 0.4195,
+     "patches": 15,
+     "px_per_mm": 51.55,
+     "source_px_per_mm": 100.0
+    }
+   }
+  },
+  {
+   "id": "cgcl_star2",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 5.46,
+     "band_power_frac": 0.2866,
+     "patches": 15,
+     "px_per_mm": 272.73,
+     "source_px_per_mm": 300.0
+    }
+   }
+  },
+  {
+   "id": "cgcd_taxireal",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 201.6,
+     "band_power_frac": 0.2447,
+     "patches": 25,
+     "px_per_mm": 37.74,
+     "source_px_per_mm": 60.0
+    }
+   }
+  },
+  {
+   "id": "cgcd_taxifake",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 211.61,
+     "band_power_frac": 0.1354,
+     "patches": 25,
+     "px_per_mm": 37.74,
+     "source_px_per_mm": 60.0
+    }
+   }
+  },
+  {
+   "id": "poki_c1",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 423.04,
+     "band_power_frac": 0.3902,
+     "patches": 15,
+     "px_per_mm": 46.12,
+     "source_px_per_mm": 230.0
+    }
+   }
+  },
+  {
+   "id": "poki_c2",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 551.23,
+     "band_power_frac": 0.5454,
+     "patches": 15,
+     "px_per_mm": 46.12,
+     "source_px_per_mm": 230.0
+    }
+   }
+  },
+  {
+   "id": "poki_c3",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 672.56,
+     "band_power_frac": 0.5968,
+     "patches": 15,
+     "px_per_mm": 46.12,
+     "source_px_per_mm": 230.0
+    }
+   }
+  },
+  {
+   "id": "poki_c4",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 2502.94,
+     "band_power_frac": 0.8095,
+     "patches": 15,
+     "px_per_mm": 46.12,
+     "source_px_per_mm": 230.0
+    }
+   }
+  },
+  {
+   "id": "ef13268_d_R",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 215.16,
+     "band_power_frac": 0.1071,
+     "patches": 30,
+     "px_per_mm": 20.82
+    }
+   }
+  },
+  {
+   "id": "ef13268_d_L",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 135.48,
+     "band_power_frac": 0.1602,
+     "patches": 32,
+     "px_per_mm": 23.65
+    }
+   }
+  },
+  {
+   "id": "ef23015_68c_L",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 110.02,
+     "band_power_frac": 0.045,
+     "patches": 31,
+     "px_per_mm": 18.45
+    }
+   }
+  },
+  {
+   "id": "ef23015_68c_M",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 542.21,
+     "band_power_frac": 0.0706,
+     "patches": 26,
+     "px_per_mm": 22.0
+    }
+   }
+  },
+  {
+   "id": "tci_phole_L",
+   "label": "GENUINE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 143.97,
+     "band_power_frac": 0.362,
+     "patches": 15,
+     "px_per_mm": 100.0,
+     "source_px_per_mm": 100.0
+    }
+   }
+  },
+  {
+   "id": "tci_phole_R",
+   "label": "FAKE",
+   "ch": {
+    "channel": "halftone_periodicity",
+    "status": "ran",
+    "values": {
+     "peak_to_median": 72.51,
+     "band_power_frac": 0.4443,
+     "patches": 15,
+     "px_per_mm": 100.0,
+     "source_px_per_mm": 100.0
+    }
+   }
+  }
+ ]
+}

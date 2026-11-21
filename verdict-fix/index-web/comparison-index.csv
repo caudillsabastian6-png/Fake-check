@@ -1,0 +1,134 @@
+candidate,cand_label,cand_name,side,reference,ref_name,pairing,identity_matched,same_capture_class
+../web-set/crops/ef13268_a_L.png,GENUINE,SP11,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef13268_a_R.png,FAKE,SP11,front,../web-set/crops/ef13268_a_L.png,SP11,"same identity, same side",True,True
+../web-set/crops/ef13268_d_L.png,FAKE,SP12,back,../web-set/crops/ef13268_d_R.png,SP12,"same identity, same side",True,True
+../web-set/crops/ef13268_d_R.png,GENUINE,SP12,back,../web-set/raw/ef64743_b01.jpg,,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/crops/ef17741_3270_L.png,GENUINE,SP01,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3270_R.png,FAKE,SP01,front,../web-set/crops/ef17741_3270_L.png,SP01,"same identity, same side",True,True
+../web-set/crops/ef17741_3275_L.png,GENUINE,SP02,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3275_R.png,FAKE,SP02,front,../web-set/crops/ef17741_3275_L.png,SP02,"same identity, same side",True,True
+../web-set/crops/ef17741_3277_L.png,GENUINE,SP03,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3277_LT.png,GENUINE,GG04,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3277_R.png,FAKE,SP03,front,../web-set/crops/ef17741_3277_L.png,SP03,"same identity, same side",True,True
+../web-set/crops/ef17741_3279_L.png,GENUINE,SP04,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3279_R.png,FAKE,SP04,front,../web-set/crops/ef17741_3279_L.png,SP04,"same identity, same side",True,True
+../web-set/crops/ef17741_3280_L.png,GENUINE,SP05,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3280_R.png,FAKE,SP05,front,../web-set/crops/ef17741_3280_L.png,SP05,"same identity, same side",True,True
+../web-set/crops/ef17741_3283_L.png,GENUINE,SP06,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3283_LB.png,GENUINE,GG01,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3283_R.png,FAKE,SP06,front,../web-set/crops/ef17741_3283_L.png,SP06,"same identity, same side",True,True
+../web-set/crops/ef17741_3286_L.png,GENUINE,SP07,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3286_R.png,FAKE,SP07,front,../web-set/crops/ef17741_3286_L.png,SP07,"same identity, same side",True,True
+../web-set/crops/ef17741_3288_L.png,GENUINE,SP08,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3288_LB.png,GENUINE,GG02,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3288_R.png,FAKE,SP08,front,../web-set/crops/ef17741_3288_L.png,SP08,"same identity, same side",True,True
+../web-set/crops/ef17741_3292_L.png,GENUINE,SP09,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3292_R.png,FAKE,SP09,front,../web-set/crops/ef17741_3292_L.png,SP09,"same identity, same side",True,True
+../web-set/crops/ef17741_3296_L.png,GENUINE,SP10,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3296_LB.png,GENUINE,GG03,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef17741_3296_R.png,FAKE,SP10,front,../web-set/crops/ef17741_3296_L.png,SP10,"same identity, same side",True,True
+../web-set/crops/ef23015_68c_L.png,GENUINE,SP13,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/crops/ef23015_68c_M.png,FAKE,SP13,front,../web-set/crops/ef23015_68c_L.png,SP13,"same identity, same side",True,True
+../web-set/crops/tci_phole_L.png,GENUINE,CP01,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,False
+../web-set/crops/tci_phole_R.png,FAKE,CP01,back,../web-set/crops/tci_phole_L.png,CP01,"same identity, same side",True,True
+../web-set/raw/cgcd_backfake.jpg,FAKE,SS02,back,../web-set/raw/cgcd_backreal.jpg,SS02,"same identity, same side",True,True
+../web-set/raw/cgcd_backreal.jpg,GENUINE,SS02,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,False
+../web-set/raw/cgcd_czfake.jpg,FAKE,SS04,front,../web-set/raw/cgcd_czreal.jpg,SS04,"same identity, same side",True,True
+../web-set/raw/cgcd_czreal.jpg,GENUINE,SS04,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/cgcd_machfake.jpg,FAKE,SS01,front,../web-set/raw/cgcd_machreal.jpg,SS01,"same identity, same side",True,True
+../web-set/raw/cgcd_machreal.jpg,GENUINE,SS01,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/cgcd_taxifake.jpg,FAKE,SS03,back,../web-set/raw/cgcd_taxireal.jpg,SS03,"same identity, same side",True,True
+../web-set/raw/cgcd_taxireal.jpg,GENUINE,SS03,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,False
+../web-set/raw/cgcl_edge.jpg,UNKNOWN,,edge,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/cgcl_star1.jpg,GENUINE,SS09,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/cgcl_star2.jpg,GENUINE,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/cgcl_starng.jpg,FAKE,SS09,front,../web-set/raw/cgcl_star1.jpg,SS09,"same identity, same side",True,True
+../web-set/raw/cgcu_obvfake.jpg,FAKE,SS05,front,../web-set/raw/cgcu_obvreal.jpg,SS05,"same identity, same side",True,True
+../web-set/raw/cgcu_obvreal.jpg,GENUINE,SS05,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/collw_backs.png,UNKNOWN,,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/raw/ef13268_a.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef13268_d.jpg,UNKNOWN,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3270.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3275.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3277.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3279.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3280.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3283.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3286.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3288.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3292.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef17741_3296.jpg,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef23015_68c.jpg,UNKNOWN,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef23015_fakestamp.jpg,FAKE,SS08,front,../web-set/raw/ef23015_realstamp.jpg,SS08,"same identity, same side",True,True
+../web-set/raw/ef23015_phonefake.jpg,FAKE,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef23015_realstamp.jpg,GENUINE,SS08,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/ef64743_b01.jpg,GENUINE,,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/raw/ef64743_b02.jpg,GENUINE,,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/raw/ef64743_b03.jpg,GENUINE,,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/raw/ef64743_b04.jpg,GENUINE,,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/raw/ef64743_b05.jpg,GENUINE,,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/raw/ef64743_b06.jpg,GENUINE,,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,True
+../web-set/raw/flip_backfake.jpg,FAKE,SS07,back,../web-set/raw/flip_backreal.jpg,SS07,"same identity, same side",True,True
+../web-set/raw/flip_backreal.jpg,GENUINE,SS07,back,../web-set/crops/ef13268_d_R.png,SP12,English back is the same design on every card since 1999 - any verified genuine back is a valid reference,False,False
+../web-set/raw/flip_regfake.jpg,FAKE,SS06,front,../web-set/raw/flip_regreal.jpg,SS06,"same identity, same side",True,True
+../web-set/raw/flip_regreal.jpg,GENUINE,SS06,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/poki_04.webp,FAKE,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/poki_c1.webp,FAKE,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/poki_c2.webp,FAKE,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/poki_c3.webp,FAKE,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/poki_c4.webp,FAKE,,front,../web-set/crops/ef13268_d_R.png,SP12,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/tci_phole.webp,UNKNOWN,,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+../web-set/raw/tci_rip.webp,UNKNOWN,,edge,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-1.jpg,FAKE,Machamp,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-10.jpg,FAKE,Swinub,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-11.jpg,FAKE,Piplup,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-12.jpg,FAKE,Granbull,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-13.jpg,FAKE,Ludicolo,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-14.jpg,FAKE,Mimikyu,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-15.jpg,FAKE,Piloswine,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-16.jpg,FAKE,Charcadet,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-17.jpg,FAKE,Charmander,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-18.jpg,FAKE,Oddish,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-19.jpg,FAKE,Gloom,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-2.jpg,FAKE,Dark Weezing,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-3.jpg,FAKE,Wartortle,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-4.jpg,FAKE,Slurpuff,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-5.jpg,FAKE,Milcery,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-6.jpg,FAKE,Darmanitan,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-7.jpg,FAKE,Gastly,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-8.jpg,FAKE,Sableye,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-fake-9.jpg,FAKE,Murkrow,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-1.jpg,GENUINE,Alakazam,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-10.jpg,GENUINE,Toucannon,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-11.jpg,GENUINE,Sizzlipede,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-12.jpg,GENUINE,Garbodor,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-13.jpg,GENUINE,Larry's Komala,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-14.jpg,GENUINE,Shuppet,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-15.jpg,GENUINE,Tulip,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-16.jpg,GENUINE,Alolan Meowth,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-17.jpg,GENUINE,Team Rocket's Giovanni,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-18.jpg,GENUINE,Larry's Starly,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-19.jpg,GENUINE,Drampa,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-2.jpg,GENUINE,Blastoise,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-20.jpg,GENUINE,Drowzee,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-21.jpg,GENUINE,Sentret,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-22.jpg,GENUINE,Simisear,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-23.jpg,GENUINE,Fennekin,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-24.jpg,GENUINE,Meowstic,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-3.jpg,GENUINE,Venusaur,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-4.jpg,GENUINE,Zapdos,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-5.jpg,GENUINE,Pikachu,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-6.jpg,GENUINE,Poliwag,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-7.jpg,GENUINE,Phanpy,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-8.jpg,GENUINE,Janine's Secret Art,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/rapid-real-9.jpg,GENUINE,Luxio,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-1.png,UNKNOWN_STATED_ZOOM,Pawniard,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-10.png,UNKNOWN_STATED_ZOOM,Gastly,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-2.png,UNKNOWN_STATED_ZOOM,Team Rocket's Meowth,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-3.png,UNKNOWN_STATED_ZOOM,Meditite,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-4.png,UNKNOWN_STATED_ZOOM,Buizel,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-5.png,UNKNOWN_STATED_ZOOM,Noctowl,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-6.png,UNKNOWN_STATED_ZOOM,Team Rocket's Honchkrow,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-7.png,UNKNOWN_STATED_ZOOM,Terapagos,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-8.png,UNKNOWN_STATED_ZOOM,Erika's Tangela,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True
+/workspace/work/rorapp/www/demo-pool/zoom-9.png,UNKNOWN_STATED_ZOOM,Sandile,front,../web-set/raw/flip_backreal.jpg,SS07,"NO same-identity reference - nearest same-capture genuine front, layout/print checks only",False,True

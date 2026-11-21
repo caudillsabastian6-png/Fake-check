@@ -1,0 +1,15 @@
+TINY SAMPLE - side=front  genuine n=47  fake n=43  (denominators locked first)
+feature                                 cap?     sep   LOO catch        [95% W]    LOO FF        [95% W]  cov
+capture_profile.edge_ring_texture       CAP     0.65        2/43 [0.013, 0.155]      3/47 [0.022, 0.172]  90/90
+color.L_mean                                   0.649        3/43 [0.024, 0.186]      4/47 [0.034, 0.199]  90/90
+small_text_edges.edge_p99_over_contrast        0.623        2/42 [0.013, 0.158]      3/45 [0.023, 0.179]  87/90
+capture_profile.height                  CAP    0.595        9/43 [0.114, 0.352]      3/47 [0.022, 0.172]  90/90
+capture_profile.blown_share             CAP    0.586        0/43     [0, 0.082]      0/47   [0.0, 0.076]  90/90
+capture_profile.card_fine_noise                0.582        3/43 [0.024, 0.186]      1/47 [0.004, 0.111]  90/90
+capture_profile.px_per_mm               CAP    0.573        9/43 [0.114, 0.352]      3/47 [0.022, 0.172]  90/90
+capture_profile.card_fill               CAP    0.548        0/43     [0, 0.082]      0/47   [0.0, 0.076]  90/90
+capture_profile.width                   CAP    0.533        9/43 [0.114, 0.352]      3/47 [0.022, 0.172]  90/90
+capture_profile.card_sharpness                 0.531        4/43 [0.037, 0.216]      3/47 [0.022, 0.172]  90/90
+capture_profile.laplacian_var           CAP     0.53        3/43 [0.024, 0.186]      3/47 [0.022, 0.172]  90/90
+centering.lr_offcentre                         0.525        5/40 [0.055, 0.261]      3/46 [0.022, 0.175]  86/90
+color.chroma_mean                              0.509        0/43     [0, 0.082]      7/47 [0.074, 0.277]  90/90

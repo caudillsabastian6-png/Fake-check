@@ -38,6 +38,19 @@ def stated_labels(root):
     files = sorted(files, key=lambda p: 0 if p.endswith(".json") else 1)
     for p in files:
             f = os.path.basename(p)
+            if f == "manifest.csv":
+                # outside web test set (build_web_set.py): labels as stated by the source pages
+                try:
+                    rows = list(csv.DictReader(open(p)))
+                except Exception:
+                    rows = []
+                if rows and "label_basis" in rows[0]:
+                    for r in rows:
+                        lab[os.path.basename(r["file"])] = {"label": r["label"] if r["label"] in ("GENUINE", "FAKE") else "UNKNOWN",
+                            "name": r.get("pair_id", ""), "side": r.get("side", "front"), "label_source": r.get("page_url", ""),
+                            "photo_type": r.get("photo_type", ""), "pair_id": r.get("pair_id", ""), "pair_kind": r.get("pair_kind", ""),
+                            "est_px_per_mm": r.get("est_px_per_mm", ""), "web_test_only": True}
+                continue
             if f == "game-images.json":
                 try:
                     d = json.load(open(p))
@@ -93,7 +106,9 @@ def main():
                              "pair_file": L.get("pair", ""), "label_source": L.get("label_source", ""),
                              "registry_check": "not_run (registry not on this machine)",
                              "filename_hint": ("fake" if f.lower().startswith("fake") else "genuine" if f.lower().startswith("genuine") else "") if not L else "",
-                             "domain_note": ""})
+                             "domain_note": "OUTSIDE WEB TEST SET - never train/tune" if L.get("web_test_only") else "",
+                             "photo_type": L.get("photo_type", ""), "pair_id": L.get("pair_id", ""), "pair_kind": L.get("pair_kind", ""),
+                             "est_px_per_mm": L.get("est_px_per_mm", "")})
     # duplicates
     by = {}
     for r in rows:

@@ -1,0 +1,20 @@
+{
+ "unique_images": 133,
+ "files_total": 133,
+ "by_label_side_capture": {
+  "GENUINE|front|photo_or_web_lowres": 45,
+  "FAKE|front|photo_or_web_lowres": 35,
+  "FAKE|back|scan_or_hires": 1,
+  "GENUINE|back|scan_or_hires": 7,
+  "GENUINE|front|scan_or_hires": 2,
+  "FAKE|front|scan_or_hires": 8,
+  "GENUINE|back|photo_or_web_lowres": 4,
+  "FAKE|back|photo_or_web_lowres": 4,
+  "UNKNOWN|edge|photo_or_web_lowres": 2,
+  "UNKNOWN|back|scan_or_hires": 1,
+  "UNKNOWN|front|photo_or_web_lowres": 12,
+  "UNKNOWN|front|scan_or_hires": 2,
+  "UNKNOWN_STATED_ZOOM|front|photo_or_web_lowres": 10
+ },
+ "identity_matched_pairs": 23
+}

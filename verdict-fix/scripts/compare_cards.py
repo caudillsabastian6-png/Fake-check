@@ -29,11 +29,9 @@ def main():
     hist = cf.ch_color_hist(rc, cc)
     rcap, ccap = R[0]["values"], C[0]["values"]
     notes = []
-    same_domain = abs(rcap["px_per_mm"] - ccap["px_per_mm"]) / max(rcap["px_per_mm"], ccap["px_per_mm"]) < 0.35 and rcap["crop"] == ccap["crop"] \
-        and max(rcap["edge_ring_texture"], ccap["edge_ring_texture"]) < 2.5 * max(1e-3, min(rcap["edge_ring_texture"], ccap["edge_ring_texture"]))
+    same_domain, why = cf.capture_match(rcap, ccap)
     if not same_domain:
-        notes.append("CAPTURE MISMATCH: reference and candidate were not captured the same way "
-                     f"({rcap['px_per_mm']} vs {ccap['px_per_mm']} px/mm, crop {rcap['crop']} vs {ccap['crop']}, edge-ring texture {rcap['edge_ring_texture']} vs {ccap['edge_ring_texture']}). "
+        notes.append("CAPTURE MISMATCH: reference and candidate were not captured the same way (" + "; ".join(why) + "). "
                      "Sharpness, colour and histogram differences below may be capture, not print.")
     print("=" * 78)
     print(f"REFERENCE : {a.ref}\nCANDIDATE : {a.cand}\nSIDE      : {a.side}")

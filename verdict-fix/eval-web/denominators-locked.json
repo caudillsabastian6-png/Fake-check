@@ -1,0 +1,171 @@
+{
+ "locked_before_measurement": true,
+ "pairs": {
+  "same_photo": 13,
+  "same_photo_genuine_control": 4,
+  "composite_two_photos": 1,
+  "same_session_not_same_photo": 9
+ },
+ "pair_ids": {
+  "same_session_not_same_photo|SS08": [
+   "ef23015_realstamp",
+   "ef23015_fakestamp"
+  ],
+  "same_session_not_same_photo|SS09": [
+   "cgcl_starng",
+   "cgcl_star1"
+  ],
+  "same_session_not_same_photo|SS01": [
+   "cgcd_machreal",
+   "cgcd_machfake"
+  ],
+  "same_session_not_same_photo|SS02": [
+   "cgcd_backreal",
+   "cgcd_backfake"
+  ],
+  "same_session_not_same_photo|SS03": [
+   "cgcd_taxireal",
+   "cgcd_taxifake"
+  ],
+  "same_session_not_same_photo|SS04": [
+   "cgcd_czfake",
+   "cgcd_czreal"
+  ],
+  "same_session_not_same_photo|SS05": [
+   "cgcu_obvreal",
+   "cgcu_obvfake"
+  ],
+  "same_session_not_same_photo|SS06": [
+   "flip_regreal",
+   "flip_regfake"
+  ],
+  "same_session_not_same_photo|SS07": [
+   "flip_backreal",
+   "flip_backfake"
+  ],
+  "same_photo|SP01": [
+   "ef17741_3270_L",
+   "ef17741_3270_R"
+  ],
+  "same_photo|SP02": [
+   "ef17741_3275_L",
+   "ef17741_3275_R"
+  ],
+  "same_photo|SP03": [
+   "ef17741_3277_L",
+   "ef17741_3277_R"
+  ],
+  "same_photo|SP04": [
+   "ef17741_3279_L",
+   "ef17741_3279_R"
+  ],
+  "same_photo|SP05": [
+   "ef17741_3280_L",
+   "ef17741_3280_R"
+  ],
+  "same_photo|SP06": [
+   "ef17741_3283_L",
+   "ef17741_3283_R"
+  ],
+  "same_photo|SP07": [
+   "ef17741_3286_L",
+   "ef17741_3286_R"
+  ],
+  "same_photo|SP08": [
+   "ef17741_3288_L",
+   "ef17741_3288_R"
+  ],
+  "same_photo|SP09": [
+   "ef17741_3292_L",
+   "ef17741_3292_R"
+  ],
+  "same_photo|SP10": [
+   "ef17741_3296_L",
+   "ef17741_3296_R"
+  ],
+  "same_photo|SP11": [
+   "ef13268_a_L",
+   "ef13268_a_R"
+  ],
+  "same_photo|SP12": [
+   "ef13268_d_R",
+   "ef13268_d_L"
+  ],
+  "same_photo|SP13": [
+   "ef23015_68c_L",
+   "ef23015_68c_M"
+  ],
+  "same_photo_genuine_control|GG01": [
+   "ef17741_3283_L",
+   "ef17741_3283_LB"
+  ],
+  "same_photo_genuine_control|GG02": [
+   "ef17741_3288_L",
+   "ef17741_3288_LB"
+  ],
+  "same_photo_genuine_control|GG03": [
+   "ef17741_3296_L",
+   "ef17741_3296_LB"
+  ],
+  "same_photo_genuine_control|GG04": [
+   "ef17741_3277_L",
+   "ef17741_3277_LT"
+  ],
+  "composite_two_photos|CP01": [
+   "tci_phole_L",
+   "tci_phole_R"
+  ]
+ },
+ "single_card_images_by_photo_type": {
+  "lab_scan_or_photo|front": {
+   "GENUINE": 3,
+   "FAKE": 3
+  },
+  "lab_scan_or_photo|back": {
+   "GENUINE": 1,
+   "FAKE": 1
+  },
+  "phone_photo_scene|front": {
+   "GENUINE": 16,
+   "FAKE": 12
+  },
+  "phone_photo_scene|back": {
+   "GENUINE": 2,
+   "FAKE": 2
+  },
+  "scan_or_flat_photo|front": {
+   "GENUINE": 0,
+   "FAKE": 1
+  }
+ },
+ "rosette_lane_candidates_ge15ppm": {
+  "GENUINE": 13,
+  "FAKE": 11,
+  "ids": [
+   "ef23015_realstamp",
+   "ef23015_fakestamp",
+   "ef23015_phonefake",
+   "ef64743_b01",
+   "ef64743_b02",
+   "ef64743_b03",
+   "ef64743_b04",
+   "ef64743_b05",
+   "ef64743_b06",
+   "cgcl_starng",
+   "cgcl_star1",
+   "cgcl_star2",
+   "cgcd_taxireal",
+   "cgcd_taxifake",
+   "poki_c1",
+   "poki_c2",
+   "poki_c3",
+   "poki_c4",
+   "ef13268_d_R",
+   "ef13268_d_L",
+   "ef23015_68c_L",
+   "ef23015_68c_M",
+   "tci_phole_L",
+   "tci_phole_R"
+  ]
+ }
+}
