@@ -1,0 +1,35 @@
+==============================================================================
+REFERENCE : /workspace/work/ccrepo/assets/genuine-salazzle-gx.webp
+CANDIDATE : /workspace/work/ccrepo/assets/fake-salazzle-gx.webp
+SIDE      : front
+Advisory measurements only - not a verdict.
+==============================================================================
+
+[capture_profile]
+  width                    ref              734   cand              900   ratio   1.23
+  height                   ref             1024   cand             1200   ratio   1.17
+  px_per_mm                ref            10.99   cand            13.95   ratio   1.27
+  crop                     ref          contour   cand       full_frame
+  card_fill                ref            0.892   cand              1.0   ratio   1.12
+  laplacian_var            ref           3634.7   cand           1179.3   ratio   0.32
+  blown_share              ref           0.0275   cand           0.0004   ratio   0.01
+  edge_ring_texture        ref            19.42   cand            13.23   ratio   0.68
+
+[halftone_periodicity]
+  ref : could_not_run (below_resolution)
+  cand: could_not_run (below_resolution)
+  why : 11.0 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+  why : 13.9 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+
+[small_text_edges]
+  edge_p99_over_contrast   ref            3.657   cand            2.873   ratio   0.79
+
+[centering]
+  left_right               ref            84/16   cand            38/62
+  top_bottom               ref            35/65   cand            59/41
+  border_mm                ref {'L': 4.1, 'R': 0.8, 'T': 0.9, 'B': 1.7}   cand {'L': 3.6, 'R': 5.8, 'T': 7.5, 'B': 5.3}
+
+[hs_histogram_distance]  bhattacharyya 0.698  (capture-match check, not a tell)
+
+NOTES
+ - CAPTURE MISMATCH: reference and candidate were not captured the same way (10.99 vs 13.95 px/mm, crop contour vs full_frame, edge-ring texture 19.42 vs 13.23). Sharpness, colour and histogram differences below may be capture, not print.

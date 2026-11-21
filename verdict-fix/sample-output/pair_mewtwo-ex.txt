@@ -1,0 +1,35 @@
+==============================================================================
+REFERENCE : /workspace/work/ccrepo/assets/genuine-mewtwo-ex.webp
+CANDIDATE : /workspace/work/ccrepo/assets/fake-mewtwo-ex.webp
+SIDE      : front
+Advisory measurements only - not a verdict.
+==============================================================================
+
+[capture_profile]
+  width                    ref              734   cand              900   ratio   1.23
+  height                   ref             1024   cand             1200   ratio   1.17
+  px_per_mm                ref            11.63   cand            13.95   ratio   1.20
+  crop                     ref       full_frame   cand       full_frame
+  card_fill                ref              1.0   cand              1.0   ratio   1.00
+  laplacian_var            ref           2181.6   cand            612.2   ratio   0.28
+  blown_share              ref           0.0179   cand              0.0   ratio   0.00
+  edge_ring_texture        ref            11.79   cand            10.74   ratio   0.91
+
+[halftone_periodicity]
+  ref : could_not_run (below_resolution)
+  cand: could_not_run (below_resolution)
+  why : 11.6 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+  why : 13.9 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+
+[small_text_edges]
+  edge_p99_over_contrast   ref            2.961   cand            2.435   ratio   0.82
+
+[centering]
+  left_right               ref            57/43   cand            57/43
+  top_bottom               ref            31/69   cand            59/41
+  border_mm                ref {'L': 3.7, 'R': 2.8, 'T': 4.9, 'B': 10.8}   cand {'L': 7.7, 'R': 5.8, 'T': 11.3, 'B': 7.7}
+
+[hs_histogram_distance]  bhattacharyya 0.385  (capture-match check, not a tell)
+
+NOTES
+ - No look-closer flags from these measurements (this is not a clean bill of health).

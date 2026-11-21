@@ -1,0 +1,35 @@
+==============================================================================
+REFERENCE : /workspace/work/ccrepo/assets/genuine-charizard-gx.webp
+CANDIDATE : /workspace/work/ccrepo/assets/fake-charizard-gx.webp
+SIDE      : front
+Advisory measurements only - not a verdict.
+==============================================================================
+
+[capture_profile]
+  width                    ref              734   cand              900   ratio   1.23
+  height                   ref             1024   cand             1200   ratio   1.17
+  px_per_mm                ref            11.63   cand            13.95   ratio   1.20
+  crop                     ref       full_frame   cand       full_frame
+  card_fill                ref              1.0   cand              1.0   ratio   1.00
+  laplacian_var            ref           3220.0   cand            599.4   ratio   0.19
+  blown_share              ref           0.0274   cand              0.0   ratio   0.00
+  edge_ring_texture        ref            17.45   cand            11.62   ratio   0.67
+
+[halftone_periodicity]
+  ref : could_not_run (below_resolution)
+  cand: could_not_run (below_resolution)
+  why : 11.6 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+  why : 13.9 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+
+[small_text_edges]
+  edge_p99_over_contrast   ref             3.57   cand             2.67   ratio   0.75
+
+[centering]
+  left_right               ref            63/37   cand            52/48
+  top_bottom               ref            39/61   cand            45/55
+  border_mm                ref {'L': 1.7, 'R': 1.0, 'T': 2.4, 'B': 3.7}   cand {'L': 6.4, 'R': 6.0, 'T': 7.8, 'B': 9.6}
+
+[hs_histogram_distance]  bhattacharyya 0.693  (capture-match check, not a tell)
+
+NOTES
+ - No look-closer flags from these measurements (this is not a clean bill of health).

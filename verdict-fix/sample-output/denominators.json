@@ -1,0 +1,14 @@
+{
+ "unique_images": 98,
+ "files_total": 204,
+ "by_label_side_capture": {
+  "FAKE|front|photo_or_web_lowres": 20,
+  "GENUINE|front|photo_or_web_lowres": 24,
+  "UNKNOWN_STATED_ZOOM|front|photo_or_web_lowres": 10,
+  "GENUINE|back|scan_or_hires": 1,
+  "GENUINE|front|scan_or_hires": 1,
+  "FAKE|back|photo_or_web_lowres": 1,
+  "UNKNOWN|front|photo_or_web_lowres": 41
+ },
+ "identity_matched_pairs": 0
+}

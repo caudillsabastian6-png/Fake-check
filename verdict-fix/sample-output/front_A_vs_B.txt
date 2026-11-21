@@ -1,0 +1,35 @@
+==============================================================================
+REFERENCE : /workspace/work/ccrepo/demo-1/samples/sample-a-front.jpg
+CANDIDATE : /workspace/work/ccrepo/demo-1/samples/sample-b-front.jpg
+SIDE      : front
+Advisory measurements only - not a verdict.
+==============================================================================
+
+[capture_profile]
+  width                    ref             1490   cand              330   ratio   0.22
+  height                   ref             2071   cand              462   ratio   0.22
+  px_per_mm                ref            23.58   cand             5.23   ratio   0.22
+  crop                     ref       full_frame   cand       full_frame
+  card_fill                ref              1.0   cand              1.0   ratio   1.00
+  laplacian_var            ref           2707.0   cand           8704.0   ratio   3.22
+  blown_share              ref           0.0146   cand           0.0257   ratio   1.76
+  edge_ring_texture        ref            12.92   cand             8.04   ratio   0.62
+
+[halftone_periodicity]
+  ref : ran
+  cand: could_not_run (below_resolution)
+  why : 5.2 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+
+[small_text_edges]
+  edge_p99_over_contrast   ref            4.192   cand            2.775   ratio   0.66
+
+[centering]
+  left_right               ref            48/52   cand             7/93
+  top_bottom               ref            46/54   cand            56/44
+  border_mm                ref {'L': 3.9, 'R': 4.2, 'T': 8.2, 'B': 9.7}   cand {'L': 0.7, 'R': 9.0, 'T': 10.0, 'B': 7.8}
+
+[hs_histogram_distance]  bhattacharyya 0.689  (capture-match check, not a tell)
+
+NOTES
+ - CAPTURE MISMATCH: reference and candidate were not captured the same way (23.58 vs 5.23 px/mm, crop full_frame vs full_frame, edge-ring texture 12.92 vs 8.04). Sharpness, colour and histogram differences below may be capture, not print.
+ - Look closer: small print is softer (2.775 vs 4.192). Capture differs - may be focus.

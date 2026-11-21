@@ -1,0 +1,6 @@
+AM offset-style {'channel': 'halftone_periodicity', 'status': 'ran', 'values': {'peak_to_median': 2990.6, 'band_power_frac': 0.7104, 'patches': 35, 'px_per_mm': 23.99}}
+  same print at 5 px/mm: could_not_run
+FM inkjet-style {'channel': 'halftone_periodicity', 'status': 'ran', 'values': {'peak_to_median': 51.32, 'band_power_frac': 0.537, 'patches': 32, 'px_per_mm': 23.99}}
+  same print at 5 px/mm: could_not_run
+sample-a-front.jpg {'channel': 'halftone_periodicity', 'status': 'ran', 'values': {'peak_to_median': 177.69, 'band_power_frac': 0.3045, 'patches': 35, 'px_per_mm': 23.58}}
+sample-a-back.jpg {'channel': 'halftone_periodicity', 'status': 'ran', 'values': {'peak_to_median': 1005.48, 'band_power_frac': 0.4134, 'patches': 29, 'px_per_mm': 21.5}}

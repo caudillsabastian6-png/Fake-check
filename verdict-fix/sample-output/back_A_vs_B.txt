@@ -1,0 +1,44 @@
+==============================================================================
+REFERENCE : /workspace/work/ccrepo/demo-1/samples/sample-a-back.jpg
+CANDIDATE : /workspace/work/ccrepo/demo-1/samples/sample-b-back.jpg
+SIDE      : back
+Advisory measurements only - not a verdict.
+==============================================================================
+
+[capture_profile]
+  width                    ref             1496   cand              330   ratio   0.22
+  height                   ref             2065   cand              463   ratio   0.22
+  px_per_mm                ref             21.5   cand             5.24   ratio   0.24
+  crop                     ref          contour   cand       full_frame
+  card_fill                ref             0.83   cand              1.0   ratio   1.20
+  laplacian_var            ref           3289.9   cand           2964.2   ratio   0.90
+  blown_share              ref           0.0316   cand           0.0063   ratio   0.20
+  edge_ring_texture        ref             1.42   cand             8.49   ratio   5.98
+
+[halftone_periodicity]
+  ref : ran
+  cand: could_not_run (below_resolution)
+  why : 5.2 px/mm on card; need >= 15.0 (about 380 dpi) to resolve a print screen
+
+[small_text_edges]
+  edge_p99_over_contrast   ref            2.084   cand            3.388   ratio   1.63
+
+[centering]
+  left_right               ref            53/47   cand            49/51
+  top_bottom               ref            47/53   cand            41/59
+  border_mm                ref {'L': 5.7, 'R': 5.0, 'T': 7.4, 'B': 8.5}   cand {'L': 4.6, 'R': 4.8, 'T': 3.8, 'B': 5.5}
+
+[back_blue]
+  blue_frac                ref            0.527   cand            0.604   ratio   1.15
+  L_mean                   ref            41.84   cand            30.61   ratio   0.73
+  a_mean                   ref             5.16   cand            15.68   ratio   3.04
+  b_mean                   ref           -30.59   cand           -35.38   ratio   1.16
+  hue_deg                  ref            279.6   cand            293.9   ratio   1.05
+  shade_spread_L           ref            42.38   cand            38.31   ratio   0.90
+  frame_minus_swirl_L      ref            -5.63   cand           -17.76   ratio   3.15
+
+[hs_histogram_distance]  bhattacharyya 0.735  (capture-match check, not a tell)
+
+NOTES
+ - CAPTURE MISMATCH: reference and candidate were not captured the same way (21.5 vs 5.24 px/mm, crop contour vs full_frame, edge-ring texture 1.42 vs 8.49). Sharpness, colour and histogram differences below may be capture, not print.
+ - Look closer: back blue hue differs by 14 deg (pale/purple backs are a known fake trait). Capture differs, so white balance may explain it.
